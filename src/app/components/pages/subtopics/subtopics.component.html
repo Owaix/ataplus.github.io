@@ -1,0 +1,16 @@
+<div class="container">
+    <h1 class="responsive-title">{{ name }}</h1>
+    <p class="responsive-description">{{ description }}</p>
+    <div class="tile-container">
+        <div (click)="showQues(item.question_ids , item.name )" class="bar" *ngFor="let item of cards">
+            <span class="bar-label">{{ item.name }}</span>
+        </div>
+    </div>
+    <button (click)="complete()" style="background-color: #2A245B;" class="links">Complete</button>
+</div>
+
+
+<app-modal *ngIf="isModalOpen" [errortitle]="errortitle" (close)="closeModal()">
+    <h2>{{errortitle}}</h2>
+    <p style="font-size: 19px;">{{errormsg}}</p>
+</app-modal>

@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap')
+
+@font-face 
+    font-family: 'Avenir-Bold'
+    src: url('assets/font/AvenirNextLTPro-Bold.otf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+@font-face 
+    font-family: 'Avenir-Light'
+    src: url('assets/font/AvenirNextLTPro-It.otf') format('truetype')
+    font-weight: normal
+    font-style: normal  
+
+@font-face 
+    font-family: 'Avenir-Regular'
+    src: url('assets/font/AvenirNextLTPro-Regular.otf') format('truetype')
+    font-weight: normal
+    font-style: normal
+
+:root
+  --dark-blue: hsl(233, 26%, 24%)
+  --lime-green: hsl(136, 65%, 51%)
+  --bright-cyan: hsl(192, 70%, 51%)
+
+  --grayish-blue: hsl(233, 8%, 62%)
+  --ligh-grayish-blue: hsl(220, 16%, 96%)
+  --very-light-gray: hsl(0, 0%, 98%)
+
+body
+  min-height: 100vh
+  margin: 0
+  font-family: 'Public Sans', sans-serif
+  overflow-x: hidden
+
+  p , label ,span
+    font-family: 'Avenir-Regular' !important
+  h2 , a
+    font-family: 'Avenir-Regular' !important
+    color:black 
+
+  button
+    border: none
+    padding: 1rem 2rem
+    background-color:#2A245B
+    border-radius: 2rem
+    color: var(--very-light-gray)
+    font-weight: 700
+    letter-spacing: 1px
+    transition: 0.3s
+
+  .tempstore
+    background-image: linear-gradient(to right, #00BEB6, #28DEDA)
+  .links
+    font-family: 'Public Sans', sans-serif
+    border: none
+    padding: 1rem 2rem    
+    background-color:#2A245B
+    border-radius: 2rem
+    color: var(--very-light-gray)
+    font-weight: 700
+    letter-spacing: 1px
+    transition: 0.3s
+
+  .btn
+    border: none
+    padding: 7px 25px
+    background-color: #ffffff
+    border-radius: 2rem
+    color: hsl(0deg 0% 0%)
+    font-weight: 500
+    letter-spacing: 1px
+    transition: 0.3s
+    font-size: 15px
+
+    &:hover
+      cursor: pointer
+      opacity: 0.5

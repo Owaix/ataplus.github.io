@@ -1,0 +1,11 @@
+<div style="background-color: black;color: white;padding: 8px 10% 8px 10%;font-size: 13px;text-align: center;">
+    <span>
+        Investing is risky. You might not know what you’ll earn, it could be hard to sell, you might own less,
+        unexpected things can happen, and you could lose all your money. Learn More.
+    </span>
+</div>
+<header [isLanding]="isLanding" [ngClass]="isLanding ? 'header' : 'header2'"></header>
+<app-loader></app-loader>
+<router-outlet></router-outlet>
+<subfooter></subfooter>
+<footer></footer>
