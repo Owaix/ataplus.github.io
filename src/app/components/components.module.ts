@@ -21,6 +21,7 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { AuthGuard } from "../service/auth.guard";
 import { SliderComponent } from "./landing_page/main/slidercomponent/slidercomponent.component";
 import { SubFooter } from "./landing_page/subfooter/footer.component";
+import { WhyAtaplus } from "./landing_page/whyataplus/whyataplus.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'topics', component: TopicsComponent, canActivate: [AuthGuard] },
   { path: 'subtopics/:id/:report_id', component: SubtopicsComponent, canActivate: [AuthGuard] },
   { path: 'question', component: QuestionsComponent, canActivate: [AuthGuard] },
+  { path: 'whyata', component: WhyAtaplus },
 ];
 
 const routerOptions: ExtraOptions = {
@@ -57,12 +59,14 @@ const routerOptions: ExtraOptions = {
     SubtopicsComponent,
     QuestionsComponent,
     ModalComponent,
-    SliderComponent
+    SliderComponent,
+    WhyAtaplus
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [
     Header,
     Main,
+    WhyAtaplus,
     Footer,
     SubFooter,
     ReasonItem,

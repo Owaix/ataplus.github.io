@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
       this.loaderService.show();
       this.mySubscription = this.service.register(this.users).pipe(
         catchError(err => {
-          console.log(err);
+          this.loaderService.hide();
           if (err.status === 400) {
             this.errormsg = err.error.message;
             this.openModal();

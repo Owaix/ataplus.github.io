@@ -47,8 +47,7 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('token', response.token);
           // this.mySubscription = this.service.GetProfile().subscribe(x => {
           //   //console.log(encryptedToken);
-          //   console.log(this.users.email);
-          //   this.authService.login(this.users.email);
+          this.authService.login(response.email);
           this.router.navigate(['/']); // Redirect to home or wherever after login
           // })
         },

@@ -11,7 +11,7 @@ export class AppComponent implements AfterViewInit {
   isLanding = true;
   constructor(private router: Router, private route: ActivatedRoute) { }
   isCustomerRoute(): boolean {
-    return this.router.url === ''; // Adjust the route as needed
+    return this.router.url === '' || this.router.url === '/ataplus'; // Adjust the route as needed
   }
   ngAfterViewInit(): void {
     const footer = document.getElementsByTagName('footer')[0];

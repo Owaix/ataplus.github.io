@@ -107,4 +107,9 @@ button:hover:not(:disabled) {
   .error {
     font-size: 12px;
   }
+
+  .eye {
+    width: 31px;
+    margin-right: -17px;
+}
 }
