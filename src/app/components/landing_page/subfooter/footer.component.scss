@@ -1,48 +1,78 @@
-.content {
-  min-width: 60%;
-  display: flex;
+.footer-top{
+  background-image: url('../../../../assets/images/curve-bg.png');
+  background-size: cover;
+  background-position: top;
+  background-repeat: repeat;
+  padding-bottom: 50px;
+  padding-top: 100px;
+  width: 100%;
+  margin-top: -100px;
+  color: #fff;
+}
 
-  h2 {
-    font-size: 2.7rem;
-    font-weight: 400;
-    color: white !important;
-    margin-block: 0;
-    font-family: 'Avenir-bold' !important;
-  }
+.container-new{
+  max-width: 1170px;
+  margin: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
 
-  p {
-    color: white !important;
-  }
+.footer-top p{
+  max-width: 90%;
+  margin-bottom: 40px;
+  font-size: 18px;
+  line-height: 30px;
+}
+.footer-top  h2{
+  font-size: 30px;
+  font-family: 'Avenir-bold' !important;
+}
 
-  button {
-    background-color: white !important;
-    color: #2A245B !important;
-  }
+.footer-top a.btn{
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  padding: 14px 24px;
+  font-size: 16px;
+}
+.footer-top .btn-right{
+  text-align: right;
+  margin-bottom: 50px;
+}
+
+@media only screen and (max-width:767px){
+
+.footer-top .btn-right{
+    text-align: left;
+}
+
+.footer-top a.btn{
+    padding: 14px 20px;
+    font-size: 14px;
 
 }
 
+.footer-top p{
+    font-size: 16px;
+    line-height: 26px;
+}
+.footer-top{
+  margin-top: -83px;
+}
+}
 
-@media screen and (max-aspect-ratio: 1) {
-  .content {
-    min-width: unset;
-    display: unset;
 
-    h2 {
-      font-size: 2.7rem;
-      font-weight: 400;
-      color: white !important;
-      margin-block: 0;
-      font-family: 'Avenir-bold' !important;
-    }
+@media (min-width:768px) and (max-width:991px){
 
-    p {
-      color: white !important;
-    }
+  .footer-top{
+    margin-top: -60px;
+   
+   }
+   
+}
 
-    button {
-      background-color: white !important;
-      color: #2A245B !important;
-    }
+@media (min-width:992px) and (max-width:1199px){
+  .footer-top{
+    margin-top: -50px;
   }
-
 }
