@@ -111,5 +111,10 @@ button:hover:not(:disabled) {
   .eye {
     width: 31px;
     margin-right: -17px;
-}
+  }
+
+  form {
+    margin-bottom: 100px
+  }
+
 }

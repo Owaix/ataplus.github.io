@@ -27,12 +27,15 @@
    <div class="container-new">
       <h2>Find a <span class="pink-bg"> business </span>that interest you</h2>
       <p>Take a look at some of out ongoing campaigns and see if there are any that catch your eye</p>
-      <div class="button-image-container text-center">
+      <div class="button-image-container">
          <button style="background-color: #2A245B;color: white;" class="btn">Get Started</button>
          <img src="../../../../assets/images/AtaPlus-06.png">
       </div>
       <br>
-      <div style="width: 100%; margin: 0 auto;">
+      <div class="webcrowsel" style="width: 100%; margin: 0 auto;">
+         <app-carousel [items]="slides"></app-carousel>
+      </div>
+      <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;">
          <image-slider [slides]="slides"></image-slider>
       </div>
    </div>
@@ -80,18 +83,24 @@
         </div>
      </div> -->
       <div class="container-three">
-         <h2>Looking to scale your business? Tell us more</h2>
-         <p>As the world's leading equitl crowdfunding platform, we help brands build amazing communities and raise
-            funds to
-            grow their business. If you want to grow your community, then apply to raise with us or read on to find out
-            more
-         </p>
-         <button style="background-color: #E31997;color: white;" class="btn">Learn More</button>
-      </div> <!-- container-three -->
+         <div>
+            <h2>Looking to scale your business? Tell us more</h2>
+            <p>As the world's leading equitl crowdfunding platform, we help brands build amazing communities and raise
+               funds to
+               grow their business. If you want to grow your community, then apply to raise with us or read on to find
+               out
+               more
+            </p>
+            <button style="background-color: #E31997;color: white;" class="btn">Learn More</button>
+         </div>
+         <div>
+            <img style="width: 100%;" class="section-three-img" src="../../../../assets/images/AtaPlus-12.png">
+         </div>
+      </div>
    </div>
    <!-- container-->
 </section>
-<section id="" class="section-three">
+<section style="display: none;" id="" class="section-three">
    <div class="container-new">
       <img class="section-three-img" src="../../../../assets/images/AtaPlus-12.png">
    </div>

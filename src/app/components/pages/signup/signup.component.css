@@ -150,4 +150,8 @@ select:focus-visible {
         width: 31px;
         margin-right: -17px;
     }
+
+    form {
+        margin-bottom: 100px
+    }
 }

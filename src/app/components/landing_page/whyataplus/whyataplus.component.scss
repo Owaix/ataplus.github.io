@@ -44,7 +44,7 @@ h2 {
     background-size: cover;
     background-position: top;
     background-repeat: repeat;
-    margin-top: -85px;
+    margin-top: -80px;
     padding-bottom: 150px;
     padding-top: 50px;
 }
@@ -241,6 +241,15 @@ h2 {
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
+    text-align: -webkit-center;
+    padding-bottom: 40px;
+
+    .card {
+        background-color: #2a245b;
+        border-radius: 24px;
+        width: 50%;
+        padding: 53px;
+    }
 }
 
 .banner-flex {
@@ -404,7 +413,7 @@ h2 {
 }
 
 .record-section {
-    background: #000;
+    background: #FF00A9;
     color: #fff;
     padding: 70px 50px;
     text-align: center;
@@ -584,6 +593,22 @@ h2 {
         font-size: 28px;
     }
 
+    .record-section .container-new {
+        max-width: 1170px;
+        margin: auto;
+        padding-left: 15px;
+        padding-right: 15px;
+        text-align: -webkit-center;
+
+        .card {
+            background-color: #2a245b;
+            border-radius: 24px;
+            width: 84%;
+            padding: 27px;
+            text-align: left;
+        }
+    }
+
     .reason-section .black-flex {
         column-gap: 15px;
     }
@@ -659,7 +684,7 @@ h2 {
     }
 
     #hero {
-        margin-top: -50px;
+        margin-top: -79px;
     }
 
     .four-flex-right {
@@ -683,7 +708,7 @@ h2 {
     //     max-width:900px;
     // }
     #hero {
-        margin-top: -48px;
+        margin-top: -83px;
     }
 
 }

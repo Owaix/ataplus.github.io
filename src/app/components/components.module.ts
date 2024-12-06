@@ -22,6 +22,7 @@ import { AuthGuard } from "../service/auth.guard";
 import { SliderComponent } from "./landing_page/main/slidercomponent/slidercomponent.component";
 import { SubFooter } from "./landing_page/subfooter/footer.component";
 import { WhyAtaplus } from "./landing_page/whyataplus/whyataplus.component";
+import { WebSliderComponent } from "./landing_page/main/carousal/carousal.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -60,7 +61,8 @@ const routerOptions: ExtraOptions = {
     QuestionsComponent,
     ModalComponent,
     SliderComponent,
-    WhyAtaplus
+    WhyAtaplus,
+    WebSliderComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [
