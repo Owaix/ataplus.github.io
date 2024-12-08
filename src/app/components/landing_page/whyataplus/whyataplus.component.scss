@@ -259,13 +259,14 @@ h2 {
 }
 
 .banner-flex .banner-flex-left {
-    width: 50%;
+    width: 90%;
 }
 
 .banner-flex .banner-flex-left h1 {
     font-size: 70px;
     line-height: 70px;
     color: #2a245b;
+    text-align: left;
     margin-bottom: 15px;
 }
 
@@ -277,7 +278,7 @@ h2 {
 .banner-flex .banner-flex-left h1 span::before {
     content: '';
     position: absolute;
-    background: url(../../../../assets/images/AtaPlus-04.png);
+    // background: url(../../../../assets/images/AtaPlus-04.png);
     background-repeat: no-repeat;
     width: 312px;
     height: 22px;
@@ -288,10 +289,8 @@ h2 {
 
 .banner-flex .banner-flex-left p {
     color: #000;
-    font-size: 18px;
-    max-width: 70%;
-    line-height: 28px;
-    margin-bottom: 30px;
+    font-size: 26px;
+    text-align: left;
 }
 
 .banner-flex .banner-flex-left .banner-button a {
@@ -487,9 +486,7 @@ h2 {
 
 
 @media only screen and (max-width:767px) {
-    .banner-flex {
-        display: block;
-    }
+    .banner-flex {}
 
     .banner-flex .banner-flex-left {
         width: 100%;
@@ -502,8 +499,8 @@ h2 {
     .banner-flex .banner-flex-left p {
         margin-bottom: 15px;
         padding-left: 15px;
-        font-weight: 700;
-        line-height: 21px;
+        line-height: 27px;
+        text-align: left;
     }
 
     .banner-button {
@@ -563,8 +560,9 @@ h2 {
     }
 
     #hero .banner-flex .banner-flex-left h1 {
-        font-size: 40px;
-        line-height: 50px;
+        font-size: 42px;
+        line-height: 44px;
+        text-align: left;
     }
 
     .banner-flex .banner-flex-left h1 span::before {

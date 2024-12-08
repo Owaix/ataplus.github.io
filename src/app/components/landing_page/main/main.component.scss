@@ -311,7 +311,6 @@ h2 {
     margin-right: 15px;
     text-decoration: none;
     color: #2a245b;
-    font-weight: bold;
     font-size: 17px;
 }
 
@@ -506,8 +505,8 @@ h2 {
     .container-new {
         max-width: 1170px;
         margin: auto;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 35px;
+        padding-right: 35px;
         padding-bottom: 0px;
 
         p {
@@ -521,7 +520,7 @@ h2 {
     }
 
     .banner-flex .banner-flex-left {
-        width: 100%;
+        width: 90%;
     }
 
     .banner-flex .banner-flex-left h1 {
@@ -633,6 +632,12 @@ h2 {
 
     .article-one .article-one-flex {
         margin-top: 0;
+
+        .right {
+            img {
+                width: 150px;
+            }
+        }
     }
 
     .article-two {
