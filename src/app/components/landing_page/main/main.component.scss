@@ -272,7 +272,7 @@ h2 {
 }
 
 .banner-flex .banner-flex-left {
-    width: 55%;
+    width: 60%;
 }
 
 .banner-flex .banner-flex-left h1 {
@@ -302,7 +302,6 @@ h2 {
 .banner-flex .banner-flex-left p {
     color: #000;
     font-size: 18px;
-    max-width: 70%;
     line-height: 28px;
     margin-bottom: 30px;
 }
@@ -499,6 +498,11 @@ h2 {
     background-size: cover;
 }
 
+@media only screen and (max-width: 360px) and (max-height: 740px) {
+    .banner-flex .banner-flex-left {
+        width: 100%!important;
+    }
+}
 
 @media only screen and (max-width:767px) {
 

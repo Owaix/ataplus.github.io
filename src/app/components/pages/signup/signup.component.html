@@ -7,7 +7,7 @@
             <br>
             <div class="input-group">
                 <label for="first_name">First Name (as per NRIC)</label>
-                <input type="text" id="first_name" first_name="name" [(ngModel)]="this.users.first_name" required
+                <input type="text" id="first_name" name="first_name" [(ngModel)]="this.users.first_name" required
                     #first_nameField="ngModel" />
                 <div *ngIf="first_nameField.invalid && first_nameField.touched" class="error">
                     First Name is required
@@ -31,10 +31,14 @@
             </div>
             <div class="input-group">
                 <label for="phoneno">Mobile Phone Number</label>
-                <input type="text" id="phoneno" name="phoneno" [(ngModel)]="this.users.phoneno" required
-                    #phonenoField="ngModel" />
+                <input type="text" id="phoneno" name="phoneno" [(ngModel)]="users.phoneno" required
+                    #phonenoField="ngModel" (keypress)="validatePhoneNumber($event)"
+                    (ngModelChange)="checkPhoneNumberFormat()" />
                 <div *ngIf="phonenoField.invalid && phonenoField.touched" class="error">
                     Phone Number is required
+                </div>
+                <div *ngIf="phoneNumberError" class="error">
+                    Phone Number should be in the format +60xxxxxxxxxx
                 </div>
             </div>
             <div class="input-group">

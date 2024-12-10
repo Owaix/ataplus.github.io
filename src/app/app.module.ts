@@ -12,8 +12,7 @@ import { LoaderComponent } from './components/shared/loader/loader/loader.compon
 
 const routes: Routes = [
   { path: 'verify', component: VerifyComponent },
-  { path: 'everif', component: EmailVerificationComponent }
-
+  { path: 'everif/:phoneno', component: EmailVerificationComponent }
 ];
 
 const routerOptions: ExtraOptions = {

@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { catchError, Subscription, throwError } from 'rxjs';
 import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/service/api.service';
+import { EncryptionService } from 'src/app/service/encrypt.service';
 import { LoaderService } from 'src/app/service/loader.service';
 
 @Component({
@@ -18,9 +19,11 @@ export class SignupComponent implements OnInit {
   showPassword = false;
   showCnfrmPassword = false;
   errortitle = 'ALERT';
+  phoneNumberError = false;
 
   constructor(
     private service: ApiService,
+    private encrypt: EncryptionService,
     private router: Router,
     private loaderService: LoaderService
   ) { }
@@ -29,7 +32,7 @@ export class SignupComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.users.email && this.users.password) {
+    if (this.users.email && this.users.password && !this.phoneNumberError) {
       this.loaderService.show();
       this.mySubscription = this.service.register(this.users).pipe(
         catchError(err => {
@@ -46,10 +49,14 @@ export class SignupComponent implements OnInit {
       ).subscribe(
         response => {
           this.errormsg = 'success';
+          this.service.sendotp({
+            phoneno: response.user.phoneno
+          }).subscribe(data => {
+            let phoneno = this.encrypt.encrypt(response.user.phoneno);
+            this.router.navigate(['/everif',phoneno]);
+          })
           //localStorage.setItem('token', response.data.access_token);
-          console.log(response);
           // this.authService.login(this.users.email);
-          this.router.navigate(['/everif']);
         },
         error => {
           console.log('Error:', error);
@@ -75,5 +82,14 @@ export class SignupComponent implements OnInit {
 
   get passwordMismatch() {
     return this.users.password !== this.users.confirm_password;
+  }
+
+  validatePhoneNumber(event: KeyboardEvent): void {
+
+  }
+
+  checkPhoneNumberFormat(): void {
+    const phoneRegex = /^\+[0-9]{10,15}$/;
+    this.phoneNumberError = !phoneRegex.test(this.users.phoneno);
   }
 }

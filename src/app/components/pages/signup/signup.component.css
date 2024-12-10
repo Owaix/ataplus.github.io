@@ -1,6 +1,6 @@
 .login-container {
     width: 100%;
-    max-width: 400px;
+    max-width: 466px;
     margin: auto;
     padding: 20px;
 }
@@ -87,6 +87,7 @@ select:focus-visible {
     .login-container {
         padding: 10px;
         width: 80%;
+        max-width: 400px;
     }
 
     h2 {

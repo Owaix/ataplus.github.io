@@ -46,60 +46,10 @@ export class VerifyComponent implements OnInit {
     this.loginLink = 'send-new-email';
   }
   resendEmail(): void {
-    let obj = {
-      type: "token",
-      data: this.token
-    }
-
-    this.mySubscription = this.service.re_verify(obj).pipe(
-      catchError(err => {
-        if (err.status === 400) {
-          this.updateForExpiredToken();
-        } else {
-          console.log(err);
-        }
-        return throwError(() => new Error("err"));
-      })
-    ).subscribe(
-      response => {
-        if (response.status == "SUCCESS") {
-          this.router.navigate(['/everif']);
-          console.log(response)
-        }
-      },
-      error => {
-        console.log('Error:', error);
-      }
-    );
+    this.router.navigate(['/login']);
   }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.token = params['token'];
-      let obj = {
-        verification_token: this.token
-      }
-
-      this.mySubscription = this.service.verify(obj).pipe(
-        catchError(err => {
-          if (err.status === 400) {
-            this.updateForExpiredToken();
-          } else {
-            console.log(err);
-          }
-          return throwError(() => new Error("err"));
-        })
-      ).subscribe(
-        response => {
-          if (response.status == "SUCCESS") {
-            console.log(response);
-          }
-        },
-        error => {
-          console.log('Error:', error);
-        }
-      );
-    });
   }
   openModal() {
     throw new Error('Method not implemented.');

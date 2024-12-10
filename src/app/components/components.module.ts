@@ -13,9 +13,6 @@ import { ApiService } from "../service/api.service";
 import { HttpClientModule } from "@angular/common/http";
 import { AuthService } from "../service/auth.service";
 import { EmailVerificationComponent } from './pages/email-verification/email-verification.component';
-import { TopicsComponent } from './pages/topics/topics.component';
-import { SubtopicsComponent } from './pages/subtopics/subtopics.component';
-import { QuestionsComponent } from './pages/questions/questions.component';
 import { EncryptionService } from "../service/encrypt.service";
 import { ModalComponent } from './shared/modal/modal.component';
 import { AuthGuard } from "../service/auth.guard";
@@ -28,9 +25,6 @@ const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
-  { path: 'topics', component: TopicsComponent, canActivate: [AuthGuard] },
-  { path: 'subtopics/:id/:report_id', component: SubtopicsComponent, canActivate: [AuthGuard] },
-  { path: 'question', component: QuestionsComponent, canActivate: [AuthGuard] },
   { path: 'whyata', component: WhyAtaplus },
 ];
 
@@ -56,9 +50,6 @@ const routerOptions: ExtraOptions = {
     LoginComponent,
     SignupComponent,
     EmailVerificationComponent,
-    TopicsComponent,
-    SubtopicsComponent,
-    QuestionsComponent,
     ModalComponent,
     SliderComponent,
     WhyAtaplus,

@@ -5,6 +5,7 @@ import { ApiService } from 'src/app/service/api.service';
 import { AuthService } from 'src/app/service/auth.service';
 import { Router } from '@angular/router';
 import { LoaderService } from 'src/app/service/loader.service';
+import { EncryptionService } from 'src/app/service/encrypt.service';
 
 @Component({
   selector: 'app-login',
@@ -16,6 +17,7 @@ export class LoginComponent implements OnInit {
   users: User = new User();
   private mySubscription: Subscription | null = null;  // Initialized as null
   constructor(private loaderService: LoaderService,
+    private encrypt: EncryptionService,
     private service: ApiService, private authService: AuthService, private router: Router) { }
   errormsg = '';
   showPassword = false;
@@ -29,10 +31,19 @@ export class LoginComponent implements OnInit {
       this.loaderService.show();
       this.mySubscription = this.service.login(this.users).pipe(
         catchError(err => {
+          console.log(err);
           if (err.status === 400) {
             this.errormsg = err.error.message;
             this.openModal();
-          } else {
+          } else if (err.status === 402) {
+            this.service.sendotp({
+              phoneno: err.error.phoneno
+            }).subscribe(data => {
+              let phoneno = this.encrypt.encrypt(err.error.phoneno);
+              this.router.navigate(['/everif', phoneno]);
+            })
+          }
+          else {
             this.errormsg = err.error.message;
             this.openModal();
           }
