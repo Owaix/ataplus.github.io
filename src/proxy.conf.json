@@ -1,0 +1,10 @@
+{
+    "/api": {
+        "target": "http://ataplus-staging.ap-southeast-1.elasticbeanstalk.com",
+        "secure": false,
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/api": "/api"
+        }
+    }
+}
