@@ -10,6 +10,58 @@ h2 {
     font-size: 43px;
 }
 
+.capital-display {
+    color: white;
+    background-color: black;
+    text-align: center;
+    padding: 20px;
+    font-weight: bold;
+}
+
+.capital-display span {
+    font-family: "Avenir-bold" !important;
+    font-size: 24px;
+    vertical-align: top;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.capital-display .amount {
+    font-family: "Avenir-bold" !important;
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+.stats-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+    gap: 100px;
+}
+
+.stat-box span {
+    font-size: 18px;
+    vertical-align: super;
+}
+
+.stat-box .number {
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.stat-box .small {
+    font-size: 20px;
+}
+
+.stat-box p {
+    font-size: 18px;
+    margin: 10px 0 0;
+    color: white;
+}
+
 // section {
 //     min-height: 70vh;
 //     transition: 1s;
@@ -576,7 +628,8 @@ h2 {
     }
 
     .section-four .section-four-flex .four-flex-left {
-        width: 100%;
+        width: 88%;
+        padding-left: 4%;
     }
 
     .section-four .section-four-flex .four-flex-left h2 {
@@ -673,9 +726,52 @@ h2 {
         z-index: -99;
     }
 
+    .capital-display {
+        color: white;
+        background-color: black;
+        text-align: center;
+        padding: 20px;
+        font-weight: bold;
+    }
+
+    .capital-display span {
+        font-family: "Avenir-bold" !important;
+        font-size: 17px;
+        vertical-align: top;
+        display: inline-block;
+        margin-top: 4px;
+    }
+
+    .capital-display .amount {
+        font-family: "Avenir-bold" !important;
+        font-size: 30px;
+        font-weight: bold;
+        margin: 0 10px;
+    }
+
+    .black-flex {
+        column-gap: 15px;
+
+        p {
+            color: white;
+        }
+    }
+
+    .stat-box p {
+        color: white;
+    }
 
 }
 
+@media (min-width:360px) and (max-width:740px) {
+    h2 {
+        font-size: 36px;
+    }
+
+    .capital-display .amount {
+        font-size: 25px;
+    }
+}
 
 
 @media (min-width:768px) and (max-width:991px) {

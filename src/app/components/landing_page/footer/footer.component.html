@@ -18,63 +18,73 @@
 </section> -->
 
 <section class="footer-new">
-    <div class="container-new">
-            <div class="footer-flex">
-                  <div class="col-1">
-                     <a href=""><img  src="../../assets/images/logo2.png" alt="Logo"></a>
-                     <p>
-                      Ata Plus Sdn, Bhd is an Equity Crowdfunding platform and is a registered Recognised Market Operator with the Securties Commission Malaysia.
-                     </p>
-                     <h4>Contact Us</h4>
-                     <ul>
-                      <li>Ata Plus Sdn Bhd <small>(201501018387 | 1143719H)</small></li>
-                      <li>B-23A-3A, G Vestor Tower. Pavilion Embassy.</li>
-                      <li>200, Jalan Ampang, 50450 Kuala Lumpur</li>
-                      <li><a href="mailto:enquiry@ata-plus.com">enquiry@ata-plus.com</a></li>
-                     </ul>
-
-                     <p class="text-sm">
-
-                      &copy;Ata Plus Sdn Bhd All right reserved.
-                     </p>
-                     <p class="text-sm">www.ata-plus.com is owned and operated by Ata Plus Sdn Bhd
-                     </p>
-                     <ul class="social-icon">
-                      <li><a href=""><img src="../../assets/images/icon1.png" alt=""></a></li>
-                      <li><a href=""><img src="../../assets/images/icon2.png" alt=""></a></li>
-                      <li><a href=""><img src="../../assets/images/icon3.png" alt=""></a></li>
-                      <li><a href=""><img src="../../assets/images/icon4.png" alt=""></a></li>
-                     </ul>
-                  </div>
-                  <div class="col-2 footer-menu">
-                      <h4>About Us</h4>
-                      <ul>
-                        <li><a href="">Blog</a></li>
-                        <li><a href="">In The News</a></li>
-                        <li><a href="">Press Releases</a></li>
-                      </ul>
-                  </div>
-                  <div class="col-3 footer-menu">
-                    <h4>Get Started</h4>
-                    <ul>
-                      <li><a href="">Investor</a></li>
-                      <li><a href="">Discover Deals</a></li>
-                      <li><a href="">Entrepreneur</a></li>
-                      <li><a href="">Are you ready for ECF?</a></li>
-                      <li><a href="">Knowledge Lab</a></li>
-                      <li><a href="">FAQs</a></li>
-                    </ul>
-                  </div>
-                  <div class="col-4 footer-menu">
-                    <h4>Legal</h4>
-                    <ul>
-                      <li><a href="">Terms of Use</a></li>
-                      <li><a href="">Risk Warning</a></li>
-                      <li><a href="">Guidelines & Eligibility</a></li>
-                      <li><a href="">Privacy Policy</a></li>
-                    
-                    </ul>
-                  </div>
-            </div> <!-- footer-flex -->
-    </div>
+  <div class="container-new">
+    <div class="footer-flex">
+      <div class="col-1">
+        <a href=""><img src="../../assets/images/logo2.png" alt="Logo"></a>
+        <p>
+          Ata Plus Sdn, Bhd is an Equity Crowdfunding platform and is a registered Recognised Market Operator with the
+          Securties Commission Malaysia.
+        </p>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Ata Plus Sdn Bhd <small>(201501018387 | 1143719H)</small></li>
+          <li>B-23A-3A, G Vestor Tower. Pavilion Embassy.</li>
+          <li>200, Jalan Ampang, 50450 Kuala Lumpur</li>
+          <li><a href="mailto:enquiry@ata-plus.com">enquiry@ata-plus.com</a></li>
+        </ul>
+        <p class="text-sm">
+          &copy;Ata Plus Sdn Bhd All right reserved.
+        </p>
+        <p class="text-sm">www.ata-plus.com is owned and operated by Ata Plus Sdn Bhd
+        </p>
+        <ul class="social-icon">
+          <li><a href=""><img src="../../assets/images/icon1.png" alt=""></a></li>
+          <li><a href=""><img src="../../assets/images/icon2.png" alt=""></a></li>
+          <li><a href=""><img src="../../assets/images/icon3.png" alt=""></a></li>
+          <li><a href=""><img src="../../assets/images/icon4.png" alt=""></a></li>
+        </ul>
+      </div>
+      <div class="col-2 footer-menu">
+        <h4 (click)="toggleSection('aboutUs')">About Us</h4>
+        <img *ngIf="!sections.aboutUs && isMobile" (click)="toggleSection('aboutUs')"
+          src="../../../../assets/images/up.png" alt="Open Menu">
+        <img *ngIf="sections.aboutUs && isMobile" (click)="toggleSection('aboutUs')"
+          src="../../../../assets/images/down.png" alt="Close Menu">
+        <ul *ngIf="sections.aboutUs || !isMobile">
+          <li><a href="">Blog</a></li>
+          <li><a href="">In The News</a></li>
+          <li><a href="">Press Releases</a></li>
+        </ul>
+      </div>
+      <div class="col-3 footer-menu">
+        <h4 (click)="toggleSection('getStarted')">Get Started</h4>
+        <img *ngIf="!sections.getStarted && isMobile" (click)="toggleSection('getStarted')"
+          src="../../../../assets/images/up.png" alt="Open Menu">
+        <img *ngIf="sections.getStarted && isMobile" (click)="toggleSection('getStarted')"
+          src="../../../../assets/images/down.png" alt="Close Menu">
+        <ul *ngIf="sections.getStarted || !isMobile">
+          <li><a href="">Investor</a></li>
+          <li><a href="">Discover Deals</a></li>
+          <li><a href="">Entrepreneur</a></li>
+          <li><a href="">Are you ready for ECF?</a></li>
+          <li><a href="">Knowledge Lab</a></li>
+          <li><a href="">FAQs</a></li>
+        </ul>
+      </div>
+      <div class="col-4 footer-menu">
+        <h4 (click)="toggleSection('legal')">Legal</h4>
+        <img *ngIf="!sections.legal && isMobile" (click)="toggleSection('legal')" src="../../../../assets/images/up.png"
+          alt="Open Menu">
+        <img *ngIf="sections.legal && isMobile" (click)="toggleSection('legal')"
+          src="../../../../assets/images/down.png" alt="Close Menu">
+        <ul *ngIf="sections.legal || !isMobile">
+          <li><a href="">Terms of Use</a></li>
+          <li><a href="">Risk Warning</a></li>
+          <li><a href="">Guidelines & Eligibility</a></li>
+          <li><a href="">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div> <!-- footer-flex -->
+  </div>
 </section>
