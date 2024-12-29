@@ -110,10 +110,10 @@
    <div class="container-new">
       <img src="../../../../assets/images/Ata Plus white logo_vertical.png">
       <h1> Own Track Records</h1>
-      <h4>Capital Raised for Issuers</h4>
       <div class="capital-display">
+         <h4>Capital Raised for Issuers</h4>
          <span>RM</span>
-         <span class="amount">88,605,955</span>
+         <span class="amount" *ngFor="let num of [currentNumber]">{{currentNumber | number: '1.0-0'}}</span>
          <span>mil</span>
       </div>
       <div class="stats-container">

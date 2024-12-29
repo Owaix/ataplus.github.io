@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
-import { SlideInterface } from "./slidercomponent/slidercomponent.component";
 import { LoaderService } from "src/app/service/loader.service";
+import { SlideInterface } from "./mobileslider/slidercomponent.component";
 
 @Component({
   selector: 'main',
@@ -8,6 +8,7 @@ import { LoaderService } from "src/app/service/loader.service";
   styleUrls: ['./main.component.scss']
 })
 export class Main implements OnInit {
+  isMobile: boolean = false;
 
   constructor(private loaderService: LoaderService) {
     for (let i = 0; i < 2; i++) {
@@ -38,8 +39,28 @@ export class Main implements OnInit {
         })
     }
   }
-  ngOnInit(): void {
+
+  initialNumber = 88605955; // Starting number
+  currentNumber = this.initialNumber;
+  intervalId: any;
+
+  ngOnInit() {
     this.loaderService.hide();
+    this.intervalId = setInterval(() => {
+      // Increment or modify the number as needed
+      this.currentNumber += Math.floor(Math.random() * 1000); // Adds a random value (0-999)
+    }, 2000); // Change every 2 seconds
+
+    this.isMobile = window.innerWidth <= 768;
+    window.addEventListener('resize', () => {
+      this.isMobile = window.innerWidth <= 768;
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId); // Clean up interval when component is destroyed
+    }
   }
 
   slides: SlideInterface[] = [];
