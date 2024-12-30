@@ -94,10 +94,7 @@ h2 {
 }
 
 #hero {
-    background-image: url('../../../../assets/images/ataplusDesktop.png');
-    background-size: cover;
-    background-position: top;
-    background-repeat: repeat;
+    background-color: #E9E9FF;
     margin-top: -92px;
     padding-bottom: 150px;
     padding-top: 50px;
@@ -266,7 +263,8 @@ h2 {
 
 @media screen and (max-width: 767px) {
     #hero {
-        background-image: url('../../../../assets/images/AtaPlus_main_cover.png');
+        background-color: #E9E9FF;
+
         .content {
             padding-block: 3rem;
             padding-inline: 1.5rem;
@@ -406,7 +404,7 @@ h2 {
     width: 190px;
     height: 22px;
     bottom: -7px;
-    left: 0;
+    left: -235px;
     background-size: cover;
     z-index: -2;
 }
@@ -566,6 +564,10 @@ h2 {
     .banner-flex .banner-flex-left {
         width: 100% !important;
     }
+
+    .reason-section h2 span::before {
+        left: -17px;
+    }
 }
 
 @media only screen and (max-width:767px) {
@@ -576,6 +578,7 @@ h2 {
         padding-left: 35px;
         padding-right: 35px;
         padding-bottom: 0px;
+        text-align: center;
 
         p {
             font-size: 15px;
@@ -661,11 +664,11 @@ h2 {
         margin-top: -84px;
         padding-top: 0;
         display: block;
-        height: 700px;
+        height: 833px;
     }
 
     #hero .banner-flex .banner-flex-left h1 {
-        font-size: 40px;
+        font-size: 36px;
         line-height: 42px;
     }
 

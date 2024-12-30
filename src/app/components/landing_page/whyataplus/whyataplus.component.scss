@@ -30,7 +30,7 @@ h2 {
     background-size: cover;
     background-position: top;
     background-repeat: repeat;
-    margin-top: -80px;
+    margin-top: -92px;
     padding-bottom: 150px;
     padding-top: 50px;
 }
@@ -436,7 +436,7 @@ h2 {
     }
 
     #hero {
-        margin-top: -65px;
+        margin-top: -84px;
         padding-top: 0;
         display: block;
         height: 700px;
@@ -534,9 +534,24 @@ h2 {
         padding-bottom: 0px;
     }
 
+    .article-section {
+        .right {
+            text-align: right;
+
+            .img {
+                width: 100%;
+            }
+        }
+
+        .left {
+            text-align: left;
+
+            .img {
+                width: 100%;
+            }
+        }
+    }
 }
-
-
 
 @media (min-width:768px) and (max-width:991px) {
     .banner-flex .banner-flex-left {

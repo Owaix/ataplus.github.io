@@ -1,0 +1,17 @@
+<div class="slider">
+    <div style="display: none;">
+        <div (click)="goToPrevious()" class="leftArrow">❰</div>
+        <div (click)="goToNext()" class="rightArrow">❱</div>
+    </div>
+    <div class="slide" [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"></div>
+    <div style=" font-family: Avenir-bold !important;  color: #2A245B;font-size: 25px;padding-top: 15px;    ">
+        {{obj().title}}</div>
+    <p class="description">{{obj().descption}}</p>
+</div>
+<br>
+<div class="dotsContainer">
+    <div [ngStyle]="{'color': currentIndex === slideIndex ? '#da1197' : '#2A245B'}"
+        *ngFor="let slide of slides; let slideIndex = index" class="dot" (click)="goToSlide(slideIndex)">
+        ●
+    </div>
+</div>

@@ -21,12 +21,18 @@ import { WhyAtaplus } from "./landing_page/whyataplus/whyataplus.component";
 import { WebSliderComponent } from "./landing_page/main/webslider/carousal.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from "./landing_page/main/mobileslider/slidercomponent.component";
+import { AboutECF } from "./landing_page/aboutecf/aboutecf.component";
+import { HomeComponent } from './pages/home/home.component';
+import { MobileSlideComponent } from "./shared/mobileslider/slidercomponent.component";
+import { WebSlideComponent } from "./shared/webslider/carousal.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
   { path: 'whyata', component: WhyAtaplus },
+  { path: 'aboutecf', component: AboutECF },
+  { path: 'home', component: HomeComponent },
 ];
 
 const routerOptions: ExtraOptions = {
@@ -45,6 +51,7 @@ const routerOptions: ExtraOptions = {
   declarations: [
     Header,
     Main,
+    AboutECF,
     Footer,
     SubFooter,
     ReasonItem,
@@ -55,12 +62,16 @@ const routerOptions: ExtraOptions = {
     ModalComponent,
     SliderComponent,
     WhyAtaplus,
-    WebSliderComponent
+    WebSliderComponent,
+    HomeComponent,
+    MobileSlideComponent,
+    WebSlideComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [
     Header,
     Main,
+    AboutECF,
     WhyAtaplus,
     Footer,
     SubFooter,

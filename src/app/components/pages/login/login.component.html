@@ -9,7 +9,7 @@
             <br>
             <div style="text-align: left;" class="input-group">
                 <label for="email">Username</label>
-                <input type="text" id="email" name="email" [(ngModel)]="users.email" required #emailField="ngModel" />
+                <input value="aowais37@gmail.com" type="text" id="email" name="email" [(ngModel)]="users.email" required #emailField="ngModel" />
                 <div *ngIf="emailField.invalid && emailField.touched" class="error">
                     email is required
                 </div>
@@ -18,7 +18,7 @@
             <div style="text-align: left;" class="input-group">
                 <label for="password">Password</label>
                 <div style="position: relative;">
-                    <input [type]="showPassword ? 'text' : 'password'" id="password" name="password"
+                    <input value="Ziawospmahc@1" [type]="showPassword ? 'text' : 'password'" id="password" name="password"
                         [(ngModel)]="users.password" required
                         [ngClass]="{'is-invalid': passwordField.invalid && passwordField.touched}" minlength="6"
                         #passwordField="ngModel" pattern="(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{6,}" />
