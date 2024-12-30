@@ -48,6 +48,11 @@ h2 {
     vertical-align: super;
 }
 
+li {
+    color: #2A245B;
+    font-size: 15px;
+}
+
 .stat-box .number {
     font-size: 50px;
     color: #2A245B;
@@ -578,11 +583,11 @@ h2 {
         padding-left: 35px;
         padding-right: 35px;
         padding-bottom: 0px;
-        text-align: center;
+        text-align: left;
 
         p {
             font-size: 15px;
-            font-weight: bold;
+            font-weight: 100;
             color: #2A245B;
         }
     }

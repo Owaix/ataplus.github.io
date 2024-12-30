@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent, canActivate: [AuthGuard] },
   { path: 'signup', component: SignupComponent, canActivate: [AuthGuard] },
   { path: 'whyata', component: WhyAtaplus },
-  { path: 'aboutecf', component: AboutECF },
+  { path: 'whatecf', component: AboutECF },
   { path: 'home', component: HomeComponent },
 ];
 
