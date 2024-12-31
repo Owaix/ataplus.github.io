@@ -211,14 +211,14 @@ h2 {
     position: relative;
 }
 
-.reason-section h2 span::before {
+.record-section h1 span::before {
     content: '';
     position: absolute;
-    background: url(../../../../assets/images/AtaPlus-04.png);
+    background: url(../../../../assets/images/27.png);
     background-repeat: no-repeat;
     width: 190px;
     height: 22px;
-    bottom: -7px;
+    bottom: 780px;
     left: 0;
     background-size: cover;
     z-index: -2;
@@ -467,7 +467,9 @@ h2 {
     }
 
     .record-section h1 {
-        font-size: 30px;
+        font-size: 41px;
+        margin-left: 8px;
+        margin-right: 139px;
     }
 
     .record-section h2 {
@@ -487,6 +489,7 @@ h2 {
             width: 84%;
             padding: 27px;
             text-align: left;
+            margin-top: 60px;
         }
     }
 
@@ -551,6 +554,27 @@ h2 {
             }
         }
     }
+
+    .record-section:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: #FF00A9 !important;
+        height: 530px;
+        width: 100%;
+        /* max-width: 450px; */
+        z-index: -99;
+    }
+
+    .record-section {
+        position: relative;
+        padding: 60px 0 !important;
+        background: transparent;
+
+    }
+
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -628,5 +652,22 @@ h2 {
                 width: 100%;
             }
         }
+    }
+}
+
+
+@media (min-width:360px) and (max-width:740px) {
+    .record-section h1 {
+        font-size: 41px;
+        margin-left: 8px;
+        margin-right: 108px;
+    }
+
+    .record-section h1 span::before {
+        content: '';
+        width: 190px;
+        height: 22px;
+        bottom: 802px;
+        left: 0;
     }
 }

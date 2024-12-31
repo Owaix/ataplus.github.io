@@ -1,9 +1,6 @@
 .slide {
-  width: 100%;
-  height: 220px;
   background-size: cover;
   background-position: center;
-  margin-left: 42px;
 }
 
 .rightArrow {
@@ -34,7 +31,7 @@
   height: 100%;
   border: 1px solid;
   border-radius: 10px;
-  padding: 50px;
+  padding: 33px;
 }
 
 .slide-container {
@@ -57,7 +54,42 @@
   transform: translateX(-100%);
 }
 
+.icon1 {
+  width: 100%;
+  height: 220px;
+  margin-left: 42px;
+}
+
+.icon2 {
+  width: 100%;
+  height: 220px;
+  margin-left: 42px;
+}
+
+.icon3 {
+  width: 100%;
+  height: 220px;
+  margin-left: 42px;
+}
+
 @media (min-width:360px) and (max-width:740px) {
+  .icon1 {
+    width: 60%;
+    height: 220px;
+    margin-left: 42px;
+  }
+
+  .icon2 {
+    width: 83%;
+    height: 186px !important;
+    margin-left: 20px;
+  }
+
+  .icon3 {
+    width: 100%;
+    height: 140px !important;
+    margin-left: 25px;
+  }
 }
 
 @media only screen and (max-width:767px) {
@@ -65,5 +97,23 @@
     font-size: 14px;
     font-weight: bold;
     color: #2A245B
+  }
+
+  .icon1 {
+    width: 60%;
+    height: 220px;
+    margin-left: 42px;
+  }
+
+  .icon2 {
+    width: 83%;
+    height: 201px;
+    margin-left: 20px;
+  }
+
+  .icon3 {
+    width: 100%;
+    height: 156px;
+    margin-left: 25px;
   }
 }

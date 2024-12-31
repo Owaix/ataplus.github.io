@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { SlideInterface } from '../../landing_page/main/mobileslider/slidercomponent.component';
 
 @Component({
   selector: 'mobile-carousel',
@@ -59,13 +60,4 @@ export class MobileSlideComponent implements OnInit {
       this.goToPrevious();
     }
   }
-}
-
-export interface SlideInterface {
-  url: string;
-  title: string;
-  subtitle: string;
-  min: string;
-  raised: string;
-  descption: string;
 }

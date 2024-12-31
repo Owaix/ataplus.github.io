@@ -52,6 +52,10 @@
   }
 }
 
+small {
+  font-size: 10px;
+}
+
 .copyrights {
   display: flex;
   flex-direction: column;
@@ -244,11 +248,11 @@
   }
 
   .col-2 img {
-    margin-left: 33px;
+    margin-left: 42px;
   }
 
   .col-3 img {
-    margin-left: 10px;
+    margin-left: 25px;
   }
 
   .col-4 img {

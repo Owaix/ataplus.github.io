@@ -25,6 +25,7 @@ import { AboutECF } from "./landing_page/aboutecf/aboutecf.component";
 import { HomeComponent } from './pages/home/home.component';
 import { MobileSlideComponent } from "./shared/mobileslider/slidercomponent.component";
 import { WebSlideComponent } from "./shared/webslider/carousal.component";
+import { ExsliderComponent } from './shared/exslider/exslider.component';
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -65,7 +66,8 @@ const routerOptions: ExtraOptions = {
     WebSliderComponent,
     HomeComponent,
     MobileSlideComponent,
-    WebSlideComponent
+    WebSlideComponent,
+    ExsliderComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [

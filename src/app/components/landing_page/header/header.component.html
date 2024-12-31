@@ -3,6 +3,8 @@
   alt="Close Menu">
 
 <nav #nav>
+  <a class="menuhome" [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/"
+    (click)="onNavItemClick()">Home</a>
   <a [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/whyata" (click)="onNavItemClick()">Why Ata
     Plus</a>
   <a [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/whatecf" (click)="onNavItemClick()">What is
@@ -15,6 +17,6 @@
   <a *ngIf="isLoggedIn" (click)="logout(); onNavItemClick()" href="#" class="links">LOG OUT</a>
 </nav>
 
-<a class="img" routerLink="/">
-  <img src="../../assets/images/footer_logo.png" alt="Logo">
+<a class="img" href="#" (click)="$event.preventDefault()">
+  <img routerLink="/" src="../../assets/images/footer_logo.png" alt="Logo">
 </a>

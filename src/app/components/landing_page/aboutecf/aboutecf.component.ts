@@ -16,6 +16,7 @@ export class AboutECF implements OnInit {
         {
           url: "../../../../assets/images/AtaPlus-53.png",
           title: "Effortless",
+          class: "icon1",
           subtitle: "Agriculture",
           min: "6,04,000",
           raised: "80,000",
@@ -23,19 +24,21 @@ export class AboutECF implements OnInit {
         },
         {
           url: "../../../../assets/images/AtaPlus-54.png",
-          title: "Andy Adams",
+          title: "SC Regulated",
           subtitle: "Finance",
+          class: "icon2",
           min: "1,00,000",
           raised: "50,000",
-          descption: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+          descption: "Fundraising campaigns are hosted on a platform that is approved & regulated by the Securities Commission (SC) Malaysia."
         },
         {
           url: "../../../../assets/images/AtaPlus-55.png",
-          title: "Andy Adams",
+          title: "Invest with a<br> Piece of mind",
+          class: "icon3",
           subtitle: "Finance",
           min: "1,00,000",
           raised: "50,000",
-          descption: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
+          descption: "Rest assured that we conduct detailed DD before a campaign can be listed on Ata Plus. Nevertheless, you should conduct your own assessment before investing."
         })
     }
   }

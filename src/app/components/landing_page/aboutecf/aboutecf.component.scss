@@ -10,6 +10,13 @@ h2 {
     font-size: 43px;
 }
 
+h3 {
+    font-weight: bold;
+    background-color: #E31997;
+    color: white;
+    padding: 7px;
+}
+
 .capital-display {
     color: white;
     background-color: #2A245B;
@@ -570,9 +577,9 @@ li {
         width: 100% !important;
     }
 
-    .reason-section h2 span::before {
-        left: -17px;
-    }
+    // .reason-section h2 span::before {
+    //     left: -270px;
+    // }
 }
 
 @media only screen and (max-width:767px) {
@@ -792,7 +799,7 @@ li {
 
 @media (min-width:360px) and (max-width:740px) {
     h2 {
-        font-size: 36px;
+        font-size: 30px;
     }
 
     .capital-display .amount {

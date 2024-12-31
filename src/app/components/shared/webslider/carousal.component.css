@@ -24,13 +24,27 @@
 }
 
 .carousel-item img {
-  width: 100%;
   height: auto;
 }
 
 .carousel-item .content {
   margin-top: 8px;
   font-size: 14px;
+}
+
+.icon1 {
+  width: 38%;
+
+}
+
+.icon2 {
+  width: 60%;
+
+}
+
+.icon3 {
+  width: 72%;
+
 }
 
 .nav {

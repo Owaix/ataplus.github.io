@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { SlideInterface } from '../mobileslider/slidercomponent.component';
+import { SlideInterface } from '../../landing_page/main/mobileslider/slidercomponent.component';
 
 @Component({
   selector: 'web-carousel',

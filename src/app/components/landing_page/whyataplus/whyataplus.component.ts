@@ -18,6 +18,7 @@ export class WhyAtaplus {
           title: "Star Grower",
           subtitle: "Agriculture",
           min: "6,04,000",
+          class : '',
           raised: "80,000",
           descption: "Stargrower cultivates dragon fruits and gingers to address food security challenges. The company aims to ensure a consistent, reliable supply to meet consumer's nutritional needs, revolutionizing how the world thinks about and consumes these vital crops."
         },
@@ -25,6 +26,7 @@ export class WhyAtaplus {
           url: "../../../../assets/images/AtaPlus-08.png",
           title: "Andy Adams",
           subtitle: "Finance",
+          class : '',
           min: "1,00,000",
           raised: "50,000",
           descption: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
@@ -34,6 +36,7 @@ export class WhyAtaplus {
           title: "Andy Adams",
           subtitle: "Finance",
           min: "1,00,000",
+          class : '',
           raised: "50,000",
           descption: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout"
         })

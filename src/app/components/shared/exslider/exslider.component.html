@@ -1,0 +1,12 @@
+<div class="slider-container">
+    <div class="slides" [style.transform]="'translateX(-' + currentIndex * 100 + '%)'">
+        <div *ngFor="let slide of slides" class="slide">
+            <ng-container *ngTemplateOutlet="slide.template; context: slide.context"></ng-container>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <span *ngFor="let slide of slides; let i = index" class="dot" [class.active]="i === currentIndex"
+            (click)="goToSlide(i)"></span>
+    </div>
+</div>

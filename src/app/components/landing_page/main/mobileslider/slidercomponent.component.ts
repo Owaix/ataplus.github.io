@@ -43,4 +43,5 @@ export interface SlideInterface {
   min: string,
   raised: string,
   descption: string
+  class : string
 }

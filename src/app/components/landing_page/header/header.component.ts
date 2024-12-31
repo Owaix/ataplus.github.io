@@ -4,7 +4,7 @@ import { AuthService } from "src/app/service/auth.service";
 @Component({
   selector: 'header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.sass']
+  styleUrls: ['./header.component.scss']
 })
 
 export class Header implements AfterViewInit {
