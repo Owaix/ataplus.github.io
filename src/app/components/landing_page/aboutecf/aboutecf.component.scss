@@ -3,6 +3,11 @@ $cross-color: #2A245B;
 $line-height: 2px;
 $line-length: 120%;
 
+.slide {
+    background-size: cover;
+    background-position: center;
+}
+
 h2 {
     font-family: 'Avenir-bold' !important;
     color: $dark-blue;
@@ -76,20 +81,6 @@ li {
     color: #2A245B;
 }
 
-// section {
-//     min-height: 70vh;
-//     transition: 1s;
-
-//     .divs {
-//         width: 250px;
-//     }
-
-//     &.section {
-//         background-size: cover;
-//         background-position: top;
-//     }
-// }
-
 .header,
 .header2 {
     padding-block: 20px;
@@ -137,141 +128,79 @@ li {
     display: none;
 }
 
-// #reason {
-//     padding-inline: 16rem 25rem;
-//     padding-block: 5rem;
-//     min-height: calc(100vh - 0rem);
-//     text-align: center;
+.icon1 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
-//     .button-image-container {
-//         display: flex;
-//         align-items: center;
-//         gap: 10px;
+.icon2 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
-//         img {
-//             margin-left: 0;
-//         }
-//     }
-//     p {
-//         line-height: 1.1rem;
-//         font-size: 15px;
-//         margin-left: 30px;
-//         font-weight: 600;
-//     }
+.icon3 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
-//     .reason {
-//         &-list {
-//             margin-top: 5rem;
-//             display: grid;
-//             grid-template-columns: repeat(4, calc(39% + 0.5rem));
-//             gap: 0;
-//         }
+.icon4 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
-//         &-item {
-//             opacity: 0.9;
-//         }
-//     }
-// }
+.icon5 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
+.icon6 {
+    width: 100%;
+    height: 220px;
+    margin-left: 42px;
+}
 
-// #articles {
-//     padding-inline: 30rem;
-//     padding-block: 5rem;
+@media (min-width:360px) and (max-width:740px) {
+    .icon1 {
+        width: 60%;
+        height: 220px;
+        margin-left: 42px;
+    }
 
-//     .container {
-//         display: flex;
-//         width: 100%;
-//     }
+    .icon2 {
+        width: 83%;
+        height: 186px;
+        margin-left: 20px;
+    }
 
-//     .left {
-//         flex: 7;
-//         font-weight: bold;
-//         padding: 10px;
-//     }
+    .icon3 {
+        width: 100%;
+        height: 140px;
+        margin-left: 25px;
+    }
 
-//     .right {
-//         flex: 3;
-//         width: 50%;
-//         padding: 10px;
-//     }
+    .icon4 {
+        width: 100%;
+        height: 220px;
+        margin-left: 42px;
+    }
 
-//     p {
-//         color: $dark-blue;
-//     }
+    .icon5 {
+        width: 100%;
+        height: 220px;
+        margin-left: 42px;
+    }
 
-//     h2 {
-//         font-size: 3rem;
-//         font-weight: 400;
-//         color: $dark-blue;
-//         margin-block: 0;
-//     }
-
-//     .article-list {
-//         display: grid;
-//         grid-template-columns: repeat(4, calc(25% - 1.5rem));
-//         gap: 2rem;
-//         margin-top: 5rem;
-
-//         &-item {
-//             width: 100%;
-//         }
-//     }
-// }
-
-// // Media Queries
-// @media screen and (max-aspect-ratio: 1) {
-//     section {
-//         opacity: 1;
-//     }
-
-//     #hero {
-//         padding-inline: 0;
-//         display: flex;
-
-//         .content {
-//             padding: 2rem;
-//             text-align: center;
-
-//             h1 {
-//                 font-size: 3rem;
-//             }
-//         }
-
-//         .images {
-//             height: unset;
-//             min-height: 70vh;
-
-//             img {
-//                 top: unset;
-//                 bottom: 0;
-//                 left: 50%;
-//                 transform: translate(-50%);
-//                 width: calc(100% - 2rem);
-//                 height: 125%;
-//             }
-//         }
-//     }
-
-//     #reason {
-//         padding-block: 4rem;
-//         padding-inline: 2rem;
-//         text-align: center;
-
-//         h2 {
-//             font-size: 3rem;
-//             font-weight: 400;
-//             color: $dark-blue;
-//             margin-block: 0;
-//         }
-
-//         .reason {
-//             &-list {
-//                 margin-top: 2rem;
-//                 grid-template-columns: repeat(2, calc(50% - 1rem));
-//             }
-//         }
-//     }
-// }
+    .icon6 {
+        width: 100%;
+        height: 220px;
+        margin-left: 42px;
+    }
+}
 
 @media screen and (max-width: 767px) {
     #hero {
@@ -301,6 +230,42 @@ li {
 
     .mobilecrowsel {
         display: block;
+    }
+
+    .icon1 {
+        width: 60%;
+        height: 220px;
+        margin-left: 42px;
+    }
+
+    .icon2 {
+        width: 83%;
+        height: 201px;
+        margin-left: 20px;
+    }
+
+    .icon3 {
+        width: 77%;
+        height: 135px;
+        margin-left: 25px;
+    }
+
+    .icon4 {
+        width: 76%;
+        height: 170px;
+        margin-left: 42px;
+    }
+
+    .icon5 {
+        width: 68%;
+        height: 208px;
+        margin-left: 42px;
+    }
+
+    .icon6 {
+        width: 65%;
+        height: 228px;
+        margin-left: 42px;
     }
 }
 
@@ -419,10 +384,6 @@ li {
     left: -235px;
     background-size: cover;
     z-index: -2;
-}
-
-.reason-section .slide {
-    height: 250px !important;
 }
 
 .reason-section .button-image-container img {
@@ -576,10 +537,6 @@ li {
     .banner-flex .banner-flex-left {
         width: 100% !important;
     }
-
-    // .reason-section h2 span::before {
-    //     left: -270px;
-    // }
 }
 
 @media only screen and (max-width:767px) {
@@ -596,6 +553,10 @@ li {
             font-size: 15px;
             font-weight: 100;
             color: #2A245B;
+        }
+
+        img {
+            width: 75%;
         }
     }
 

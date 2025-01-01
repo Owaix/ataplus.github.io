@@ -39,7 +39,16 @@
          <web-carousel [items]="slides"></web-carousel>
       </div>
       <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;text-align: center;">
-         <mobile-carousel [slides]="slides"></mobile-carousel>
+         <mobile-carousel [slides]="slides" (currentIndexChanged)="onSlideChange($event)">
+            <div class="slide-container">
+               <div class="slide {{obj().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl(currentIndex) }">
+               </div>
+            </div>
+            <div [innerHTML]="obj().title"
+               style="font-family: Avenir-bold !important; color: #2A245B; font-size: 25px; padding-bottom: 20px;">
+            </div>
+            <p class="description">{{obj().descption}}</p>
+         </mobile-carousel>
       </div>
    </div>
    <!-- container-->
@@ -82,14 +91,23 @@
 <section id="reason" class="reason-section">
    <div class="container-new">
       <h2>Become an Issuers</h2>
-      <h3>(Company to Raise Funds)</h3>
+      <img src="../../assets/images/AtaPlus-65.png" alt="Hero Image">
       <p>Start applying now to become an issuer and bring your business idea to life with Ata Plus</p>
       <br>
       <div class="webcrowsel" style="width: 100%; margin: 0 auto;">
-         <web-carousel [items]="slides"></web-carousel>
+         <web-carousel [items]="slide2"></web-carousel>
       </div>
       <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;text-align: center;">
-         <mobile-carousel [slides]="slides"></mobile-carousel>
+         <mobile-carousel [slides]="slide2" (currentIndexChanged)="onSlideChange($event)">
+            <div class="slide-container">
+               <div class="slide {{obj2().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl2(currentIndex) }">
+               </div>
+            </div>
+            <div [innerHTML]="obj2().title"
+               style="font-family: Avenir-bold !important; color: #2A245B; font-size: 25px; padding-bottom: 20px;">
+            </div>
+            <p class="description">{{obj2().descption}}</p>
+         </mobile-carousel>
       </div>
    </div>
    <!-- container-->

@@ -61,6 +61,15 @@ h2 {
     }
 }
 
+.banner-button {
+    padding-left: 15px;
+}
+
+.banner-button .btn {
+    display: block;
+    margin-bottom: 8px;
+    width: 100px;
+}
 
 @media screen and (max-width: 767px) {
     #hero {
@@ -90,6 +99,12 @@ h2 {
 
     .mobilecrowsel {
         display: block;
+    }
+
+    .downarr {
+        position: absolute;
+        left: 269px;
+        top: 126px;
     }
 }
 
@@ -133,6 +148,12 @@ h2 {
         border-radius: 24px;
         width: 50%;
         padding: 53px;
+    }
+
+    .downarr {
+        position: absolute;
+        left: 269px;
+        top: 159px;
     }
 }
 
@@ -216,12 +237,11 @@ h2 {
     position: absolute;
     background: url(../../../../assets/images/27.png);
     background-repeat: no-repeat;
-    width: 190px;
-    height: 22px;
-    bottom: 780px;
-    left: 0;
+    width: 182px;
+    height: 17px;
+    bottom: 859px;
+    left: 29px;
     background-size: cover;
-    z-index: -2;
 }
 
 .reason-section .slide {
@@ -393,7 +413,8 @@ h2 {
     .banner-button .btn {
         display: block;
         margin-bottom: 15px;
-        width: 150px;
+        width: 175px;
+        text-decoration: none;
     }
 
     .banner-flex .banner-flex-right {
@@ -479,8 +500,8 @@ h2 {
     .record-section .container-new {
         max-width: 1170px;
         margin: auto;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: 30px;
+        padding-right: 30px;
         text-align: -webkit-center;
 
         .card {
@@ -489,7 +510,13 @@ h2 {
             width: 84%;
             padding: 27px;
             text-align: left;
-            margin-top: 60px;
+            margin-top: 26px;
+        }
+
+        .downarr {
+            position: absolute;
+            left: 269px;
+            top: 159px;
         }
     }
 
@@ -575,6 +602,14 @@ h2 {
 
     }
 
+    .slide-container {
+        margin-left: -33px;
+        margin-right: -33px;
+    }
+
+    .slide {
+        background-size: cover;
+    }
 }
 
 @media (min-width:768px) and (max-width:991px) {
@@ -660,14 +695,8 @@ h2 {
     .record-section h1 {
         font-size: 41px;
         margin-left: 8px;
-        margin-right: 108px;
+        margin-right: 100px;
     }
 
-    .record-section h1 span::before {
-        content: '';
-        width: 190px;
-        height: 22px;
-        bottom: 802px;
-        left: 0;
-    }
+    .record-section h1 span::before {}
 }

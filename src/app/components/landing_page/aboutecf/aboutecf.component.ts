@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { LoaderService } from "src/app/service/loader.service";
 import { SlideInterface } from "../main/mobileslider/slidercomponent.component";
+import { whyata1, whyata2 } from "src/app/models/slide-data";
 
 @Component({
   selector: 'main',
@@ -9,38 +10,12 @@ import { SlideInterface } from "../main/mobileslider/slidercomponent.component";
 })
 export class AboutECF implements OnInit {
   isMobile: boolean = false;
+  currentIndex: number = 0;
+  @Input() slides: any[] = whyata1;  // Assign the imported slide data here
+  @Input() slide2: any[] = whyata2;  // Assign the imported slide data here
 
   constructor(private loaderService: LoaderService) {
-    for (let i = 0; i < 2; i++) {
-      this.slides.push(
-        {
-          url: "../../../../assets/images/AtaPlus-53.png",
-          title: "Effortless",
-          class: "icon1",
-          subtitle: "Agriculture",
-          min: "6,04,000",
-          raised: "80,000",
-          descption: "Whether you're a beginner or experienced investor, investing on Ata Plus is simple."
-        },
-        {
-          url: "../../../../assets/images/AtaPlus-54.png",
-          title: "SC Regulated",
-          subtitle: "Finance",
-          class: "icon2",
-          min: "1,00,000",
-          raised: "50,000",
-          descption: "Fundraising campaigns are hosted on a platform that is approved & regulated by the Securities Commission (SC) Malaysia."
-        },
-        {
-          url: "../../../../assets/images/AtaPlus-55.png",
-          title: "Invest with a<br> Piece of mind",
-          class: "icon3",
-          subtitle: "Finance",
-          min: "1,00,000",
-          raised: "50,000",
-          descption: "Rest assured that we conduct detailed DD before a campaign can be listed on Ata Plus. Nevertheless, you should conduct your own assessment before investing."
-        })
-    }
+
   }
 
   initialNumber = 88605955; // Starting number
@@ -60,11 +35,29 @@ export class AboutECF implements OnInit {
     });
   }
 
+  onSlideChange(index: number): void {
+    this.currentIndex = index;
+  }
+
   ngOnDestroy() {
     if (this.intervalId) {
       clearInterval(this.intervalId); // Clean up interval when component is destroyed
     }
   }
 
-  slides: SlideInterface[] = [];
+  getCurrentSlideUrl(index: number) {
+    return `url('${this.slides[index].url}')`;
+  }
+
+  getCurrentSlideUrl2(index: number) {
+    return `url('${this.slide2[index].url}')`;
+  }
+
+  obj() {
+    return this.slides[this.currentIndex];
+  }
+
+  obj2() {
+    return this.slide2[this.currentIndex];
+  }
 }

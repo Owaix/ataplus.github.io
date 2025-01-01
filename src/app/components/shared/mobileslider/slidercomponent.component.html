@@ -4,13 +4,7 @@
         <div (click)="goToPrevious()" class="leftArrow">❰</div>
         <div (click)="goToNext()" class="rightArrow">❱</div>
     </div>
-    <div class="slide-container">
-        <div class="slide {{obj().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl(currentIndex) }"></div>
-    </div>
-    <div [innerHTML]="obj().title"
-        style="font-family: Avenir-bold !important; color: #2A245B; font-size: 25px; padding-top: 15px;">
-    </div>
-    <p class="description">{{obj().descption}}</p>
+    <ng-content></ng-content>
 </div>
 <br>
 <div class="dotsContainer">

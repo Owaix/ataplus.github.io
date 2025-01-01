@@ -65,6 +65,9 @@
 <div class="record-section">
    <div class="container-new">
       <h1>What We <span class="pink-bg"> Uphold </span>to</h1>
+      <div class="downarr">
+         <img src="../../../../assets/images/downarrow.png">
+      </div>
       <div class="card">
          <p>We use technology to enhance transparency and uphold good governance in investments.</p>
          <p>Be your trusted partner in facilitating seamless collaboration between business owners and investors.</p>
@@ -76,6 +79,10 @@
          <p>Ata Plus is dedicated to financial inclusivity, envisioning a future where investment is open to all.</p>
          <p>Our commitment to democratizing wealth and directing capital toward productive outcomes positions us as a
             driving force in Malaysia's financial landscape.</p>
+         <div class="banner-button">
+            <a class="btn" href="">Raise Fund With Ata Plus</a>
+            <a class="btn" href="">Be An Investor at Ata Plus</a>
+         </div>
       </div>
    </div>
 </div>
@@ -99,10 +106,19 @@
       <h2>Our Insights</h2>
       <br>
       <div class="webcrowsel" style="width: 100%; margin: 0 auto;">
-         <app-carousel [items]="slides"></app-carousel>
+         <web-carousel [items]="slides"></web-carousel>
       </div>
       <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;text-align: center;">
-         <image-slider [slides]="slides"></image-slider>
+         <mobile-carousel [slides]="slides" (currentIndexChanged)="onSlideChange($event)">
+            <div [innerHTML]="obj().title"
+               style="font-family: Avenir-bold !important; color: #2A245B; font-size: 25px; padding-bottom: 20px;">
+            </div>
+            <div class="slide-container">
+               <div class="slide {{obj().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl(currentIndex) }">
+               </div>
+            </div>
+            <p class="description">{{obj().descption}}</p>
+         </mobile-carousel>
       </div>
    </div>
    <br>
