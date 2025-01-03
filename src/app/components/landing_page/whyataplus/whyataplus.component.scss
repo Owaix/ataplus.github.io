@@ -67,8 +67,9 @@ h2 {
 
 .banner-button .btn {
     display: block;
-    margin-bottom: 8px;
-    width: 100px;
+    margin-bottom: 15px;
+    width: 175px;
+    text-decoration: none;
 }
 
 @media screen and (max-width: 767px) {
@@ -142,6 +143,7 @@ h2 {
     padding-left: 15px;
     padding-right: 15px;
     padding-bottom: 40px;
+    text-align: -webkit-center;
 
     .card {
         background-color: #2a245b;
@@ -153,7 +155,7 @@ h2 {
     .downarr {
         position: absolute;
         left: 269px;
-        top: 159px;
+        // top: 10px;
     }
 }
 
@@ -221,6 +223,31 @@ h2 {
 .reason-section {
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.record-section {
+    position: relative;
+    padding: 60px 0 !important;
+    background: transparent;
+}
+
+.record-section:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #FF00A9 !important;
+    height: 530px;
+    width: 100%;
+    z-index: -99;
+}
+
+.record-section .container-new {
+    max-width: 1170px;
+    margin: auto;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .reason-section h2 {
@@ -315,7 +342,6 @@ h2 {
 }
 
 .record-section {
-    background: #FF00A9;
     color: #fff;
     padding: 70px 50px;
     text-align: center;

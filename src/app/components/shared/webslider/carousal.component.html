@@ -2,11 +2,12 @@
   <div class="carousel" [style.transform]="'translateX(' + translateX + '%)'" (mousedown)="onDragStart($event)"
     (mousemove)="onDragMove($event)" (mouseup)="onDragEnd()" (mouseleave)="onDragEnd()">
     <div class="carousel-item" *ngFor="let item of items">
-      <div class="img-container">
-      <img [src]="item.url" alt="Carousel Image" />
-    </div>
-      <div [innerHTML]="item.title" style=" font-family: Avenir-bold !important;  color: #2A245B;font-size: 25px;padding-top: 15px;    ">
-        </div>
+      <div [ngClass]="item.class == '' ? '' : 'img-container'">
+        <img [src]="item.url" alt="Carousel Image" />
+      </div>
+      <div [innerHTML]="item.title"
+        style=" font-family: Avenir-bold !important;  color: #2A245B;font-size: 25px;padding-top: 15px;    ">
+      </div>
       <span style="font-style: italic;color: #2A245B">{{item.subtitle}}</span>
       <br>
       <br>
