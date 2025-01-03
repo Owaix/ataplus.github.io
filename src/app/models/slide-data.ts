@@ -62,7 +62,7 @@ export const whyata2 = [
 export const whyata3 = [
     {
         url: "../../../../assets/images/AtaPlus-07.png",
-        title: "Sawawak's Tilapia Triump",
+        title: "Sarawak's Tilapia Triump",
         subtitle: "Agriculture",
         min: "6,04,000",
         class: '',
