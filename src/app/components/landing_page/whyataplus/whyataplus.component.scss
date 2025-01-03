@@ -62,14 +62,13 @@ h2 {
 }
 
 .banner-button {
-    // padding-left: 34px;
+    padding-left: 15px;
 }
 
 .banner-button .btn {
     display: block;
     margin-bottom: 8px;
-    width: 190px;
-    text-decoration: none;
+    width: 100px;
 }
 
 @media screen and (max-width: 767px) {
@@ -142,7 +141,6 @@ h2 {
     margin: auto;
     padding-left: 15px;
     padding-right: 15px;
-    text-align: -webkit-center;
     padding-bottom: 40px;
 
     .card {
@@ -154,8 +152,8 @@ h2 {
 
     .downarr {
         position: absolute;
-        left: 972px;
-        top: 88px;
+        left: 269px;
+        top: 159px;
     }
 }
 
@@ -267,19 +265,12 @@ h2 {
     width: 70%;
 }
 
-
-.container-one {
-    width: 70%;
-    display: flow-root;
-
-    img {
-        width: 30%;
-    }
-}
-
 .container-two {
     width: 70%;
-    float: right;
+    margin-left: 200px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
 }
 
 .article-section h2 {
@@ -324,28 +315,11 @@ h2 {
 }
 
 .record-section {
-    position: relative;
     background: #FF00A9;
     color: #fff;
-    position: relative;
-    padding: 60px 0 !important;
-    background: transparent;
     padding: 70px 50px;
     text-align: center;
     margin-top: -4px;
-}
-
-.record-section:before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #FF00A9 !important;
-    height: 530px;
-    width: 100%;
-    /* max-width: 450px; */
-    z-index: -99;
 }
 
 .record-section .downarr img {
@@ -353,6 +327,8 @@ h2 {
 }
 
 .record-section .whatwe {
+    text-align: left;
+
     img {
         height: 100px;
     }
@@ -421,12 +397,7 @@ h2 {
 
 
 @media only screen and (max-width:767px) {
-    .record-section .whatwe {
-        text-align: left;
-        img {
-            height: 100px;
-        }
-    }
+    .banner-flex {}
 
     .banner-flex .banner-flex-left {
         width: 100%;
@@ -444,7 +415,7 @@ h2 {
     }
 
     .banner-button {
-        // padding-left: 34px;
+        padding-left: 15px;
     }
 
     .banner-button .btn {
@@ -467,39 +438,10 @@ h2 {
         display: block;
         width: 100%;
         margin-left: 0;
-
-        h2 {
-            text-align: center;
-        }
-    }
-
-    .container-one {
-        width: 100%;
-        display: flow-root;
-
-        img {
-            width: 100%;
-        }
-
-        h2 {
-            text-align: center;
-        }
     }
 
     .container-three {
         width: 100%;
-
-        img {
-            width: 100%;
-        }
-
-        h2 {
-            text-align: center;
-        }
-    }
-
-    .centerimg {
-        text-align: center;
     }
 
     .section-four .section-four-flex {
@@ -530,7 +472,7 @@ h2 {
     }
 
     #hero .banner-flex .banner-flex-left h1 {
-        font-size: 37px;
+        font-size: 42px;
         line-height: 44px;
         text-align: left;
     }
@@ -566,8 +508,8 @@ h2 {
     .record-section .container-new {
         max-width: 1170px;
         margin: auto;
-        padding-left: 45px;
-        padding-right: 45px;
+        padding-left: 30px;
+        padding-right: 30px;
         text-align: -webkit-center;
 
         .card {
@@ -625,8 +567,8 @@ h2 {
     .container-new {
         max-width: 1170px;
         margin: auto;
-        padding-left: 60px;
-        padding-right: 60px;
+        padding-left: 35px;
+        padding-right: 35px;
         padding-bottom: 0px;
     }
 

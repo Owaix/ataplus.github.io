@@ -6,7 +6,7 @@ import { SlideInterface } from '../../landing_page/main/mobileslider/slidercompo
   templateUrl: './carousal.component.html',
   styleUrls: ['./carousal.component.css']
 })
-export class WebSlideComponent {
+export class WebSliderComponent {
   @Input() items: SlideInterface[] = [];
 
   translateX = 0;

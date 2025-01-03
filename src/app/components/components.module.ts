@@ -18,14 +18,13 @@ import { ModalComponent } from './shared/modal/modal.component';
 import { AuthGuard } from "../service/auth.guard";
 import { SubFooter } from "./landing_page/subfooter/footer.component";
 import { WhyAtaplus } from "./landing_page/whyataplus/whyataplus.component";
-import { WebSliderComponent } from "./landing_page/main/webslider/carousal.component";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SliderComponent } from "./landing_page/main/mobileslider/slidercomponent.component";
 import { AboutECF } from "./landing_page/aboutecf/aboutecf.component";
 import { HomeComponent } from './pages/home/home.component';
 import { MobileSlideComponent } from "./shared/mobileslider/slidercomponent.component";
-import { WebSlideComponent } from "./shared/webslider/carousal.component";
 import { ExsliderComponent } from './shared/exslider/exslider.component';
+import { WebSliderComponent } from "./shared/webslider/carousal.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -65,8 +64,7 @@ const routerOptions: ExtraOptions = {
     WhyAtaplus,
     WebSliderComponent,
     HomeComponent,
-    MobileSlideComponent,
-    WebSlideComponent,
+    MobileSlideComponent,    
     ExsliderComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],

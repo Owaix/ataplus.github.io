@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { LoaderService } from "src/app/service/loader.service";
 import { SlideInterface } from "./mobileslider/slidercomponent.component";
+import { whyata3 } from "src/app/models/slide-data";
 
 @Component({
   selector: 'main',
@@ -9,6 +10,7 @@ import { SlideInterface } from "./mobileslider/slidercomponent.component";
 })
 export class Main implements OnInit {
   isMobile: boolean = false;
+  @Input() slides: any[] = whyata3;
 
   constructor(private loaderService: LoaderService) {
     for (let i = 0; i < 2; i++) {
@@ -66,5 +68,4 @@ export class Main implements OnInit {
     }
   }
 
-  slides: SlideInterface[] = [];
 }

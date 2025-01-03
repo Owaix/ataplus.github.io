@@ -267,6 +267,7 @@ h2 {
 @media screen and (max-width: 767px) {
     #hero {
         background-image: url('../../../../assets/images/AtaPlus_main_cover.png');
+
         .content {
             padding-block: 3rem;
             padding-inline: 1.5rem;
@@ -329,7 +330,7 @@ h2 {
 }
 
 .banner-flex .banner-flex-left {
-    width: 60%;
+    // width: 60%;
 }
 
 .banner-flex .banner-flex-left h1 {
@@ -363,7 +364,7 @@ h2 {
     margin-bottom: 30px;
 }
 
-.banner-flex .banner-flex-left .banner-button a {
+.banner-flex .banner-flex-left .grid-rows a {
     margin-right: 15px;
     text-decoration: none;
     color: #2a245b;
@@ -457,6 +458,12 @@ h2 {
     display: flex;
     align-items: center;
     margin-top: -4px;
+
+    .right {
+        img {
+            width: 176px;
+        }
+    }
 }
 
 .article-two {
@@ -464,6 +471,12 @@ h2 {
     margin-top: 30px;
     margin-bottom: 48px;
     float: right;
+
+    .right {
+        img {
+            width: 150px;
+        }
+    }
 }
 
 .article-two .article-two-flex {
@@ -493,7 +506,7 @@ h2 {
 }
 
 .record-section img {
-    height: 150px;
+    height: 117px;
 }
 
 .record-section h1 {
@@ -571,7 +584,8 @@ h2 {
 @media only screen and (max-width:767px) {
 
     .container-new {
-        max-width: 1170px;
+        // max-width: 1170px;
+        width: auto;
         margin: auto;
         padding-left: 35px;
         padding-right: 35px;
@@ -589,7 +603,7 @@ h2 {
     }
 
     .banner-flex .banner-flex-left {
-        width: 96%;
+        // width: 96%;        
     }
 
     .banner-flex .banner-flex-left h1 {
@@ -604,14 +618,20 @@ h2 {
         font-size: 16px;
     }
 
-    .banner-button {
-        padding-left: 15px;
+    // .grid-rows {
+    //     padding-left: 15px;
+    // }
+
+    .grid-rows {
+        // display: grid;
+        // grid-template-rows: auto auto;
+        gap: 10px;
+        display: inline-grid;
     }
 
-    .banner-button .btn {
-        display: block;
-        margin-bottom: 8px;
-        width: 100px;
+    .grid-rows .btn {
+        display: inline-block;
+        width: auto;
     }
 
     .banner-flex .banner-flex-right {
@@ -641,8 +661,7 @@ h2 {
     .section-four .section-four-flex .four-flex-left {
         position: absolute;
         margin-top: -13%;
-        width: 88%;
-        padding-left: 4%;
+        width: 86%;
     }
 
     .section-four .section-four-flex .four-flex-left h2 {
@@ -719,6 +738,12 @@ h2 {
         width: 100%;
         margin-top: 30px;
         margin-bottom: 48px;
+
+        .right {
+            img {
+                width: 150px;
+            }
+        }
     }
 
     .section-four .container-new {
@@ -780,6 +805,10 @@ h2 {
         color: #2A245B;
     }
 
+    .record-section img {
+        height: 77px;
+    }
+
 }
 
 @media (min-width:360px) and (max-width:740px) {
@@ -803,7 +832,7 @@ h2 {
     }
 
     .banner-flex .banner-flex-left {
-        width: 60%;
+        // width: 60%;
     }
 
     .banner-flex .banner-flex-right {
@@ -866,9 +895,7 @@ h2 {
     #hero {
         margin-top: -83px;
     }
-
 }
-
 
 .amount {
     animation: fade-in-out 2s ease-in-out infinite;
@@ -894,5 +921,11 @@ h2 {
     100% {
         opacity: 0;
         transform: translateY(-20px);
+    }
+}
+
+@media only screen and (width: 414px) and (height: 896px) {
+    .grid-rows .btn {
+        width: 50px !important;
     }
 }
