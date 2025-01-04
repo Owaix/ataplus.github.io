@@ -33,6 +33,12 @@
 //   transition: 0s;
 // }
 
+@media (min-width: 1025px) and (max-width: 1237px) {
+  .header {
+    padding-inline: 0rem;
+  }
+}
+
 
 @media screen and (min-aspect-ratio: 1) and (max-width: 1024px) {
 

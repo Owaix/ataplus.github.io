@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'image-slider',
@@ -6,7 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./slidercomponent.component.scss']
 })
 
-export class SliderComponent {
+export class SliderComponent implements OnInit {
+  ngOnInit(): void {
+    console.log(this.slides);
+  }
   @Input() slides: SlideInterface[] = [];
   currentIndex: number = 0;
 
@@ -43,5 +46,5 @@ export interface SlideInterface {
   min: string,
   raised: string,
   descption: string
-  class : string
+  class: string
 }
