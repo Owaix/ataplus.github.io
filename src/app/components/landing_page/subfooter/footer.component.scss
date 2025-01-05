@@ -43,6 +43,9 @@
 }
 
 @media only screen and (max-width:767px) {
+  .footer-top {
+    background-image: url('../../../../assets/images/AtaPlus-64.png');    
+  }
 
   .footer-top .btn-right {
     text-align: left;

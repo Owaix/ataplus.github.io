@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { LoaderService } from "src/app/service/loader.service";
-import { whyata3 } from "src/app/models/slide-data";
+import { whyata3, whyata4 } from "src/app/models/slide-data";
 import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
@@ -22,7 +22,7 @@ import { animate, state, style, transition, trigger } from '@angular/animations'
 })
 export class Main implements OnInit {
   isMobile: boolean = false;
-  @Input() slides: any[] = whyata3;
+  @Input() slides: any[] = whyata4;
 
   constructor(private loaderService: LoaderService) {
   }
