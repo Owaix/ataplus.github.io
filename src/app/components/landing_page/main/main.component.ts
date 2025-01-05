@@ -1,12 +1,24 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { LoaderService } from "src/app/service/loader.service";
-import { SlideInterface } from "./mobileslider/slidercomponent.component";
 import { whyata3 } from "src/app/models/slide-data";
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'main',
   templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss']
+  styleUrls: ['./main.component.scss'],
+  animations: [
+    trigger('countAnimation', [
+      state('void', style({ opacity: 0 })),
+      transition('void => *', [
+        style({ transform: 'scale(0.5)', opacity: 0 }),
+        animate('300ms cubic-bezier(0.4, 0, 1, 1)', style({ transform: 'scale(1)', opacity: 1 }))
+      ]),
+      transition('* => void', [
+        animate('300ms cubic-bezier(0.4, 0, 1, 1)', style({ transform: 'scale(1.5)', opacity: 0 }))
+      ])
+    ])
+  ]
 })
 export class Main implements OnInit {
   isMobile: boolean = false;

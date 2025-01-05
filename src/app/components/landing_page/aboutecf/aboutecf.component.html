@@ -27,12 +27,17 @@
 <!-- <div class="section"> -->
 <section id="reason" class="reason-section">
    <div class="container-new">
-      <h2>Become an Investor</h2>
-      <p>Investing with Ata Plus means becoming a driving force behind groundbreaking ideas, fostering innovation, and
-         participating in the
-         growth of dynamics startups. Start your investment journey today here with us.
-      </p>
-      <br>
+      <div class="becomeinv">
+         <h2>Become an Investor</h2>
+         <p>Investing with Ata Plus means becoming a driving force behind groundbreaking ideas, fostering innovation,
+            and
+            participating in the
+            growth of dynamics startups. Start your investment journey today here with us.
+         </p>
+      </div>
+      <div class="arrow" >
+         <img src="../../assets/images/AtaPlus-50.png" alt="Hero Image">
+      </div>      
       <h2>Why Invest with <span class="pink-bg"> Ata Plus? </span></h2>
       <br>
       <div class="webcrowsel" style="width: 100%; margin: 0 auto;">
@@ -40,7 +45,7 @@
       </div>
       <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;text-align: center;">
          <mobile-carousel [slides]="slides" (currentIndexChanged)="onSlideChange($event)">
-            <div class="slide-container">
+            <div [ngClass]="obj().class == '' ? '' : 'img-container'">
                <div class="slide {{obj().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl(currentIndex) }">
                </div>
             </div>
@@ -53,11 +58,42 @@
    </div>
    <!-- container-->
 </section>
+<section id="investroadmap" class="investroadmap-section">
+   <div class="container-roadmap">
+      <div class="roadimg">
+         <img src="../../assets/images/investroadmap.png" alt="Hero Image">
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+   </div>
+</section>
 <section id="articles" class="article-section">
    <div class="container-new">
       <div class="container-three">
-         <div>
-            <h2>Be a Smart Investor</h2>
+         <h2>Be a Smart Investor</h2>
+         <div class="bullets">
             <p>The public needs to be a smart investor. Smart investors:</p>
             <ol>
                <li>diversify their money into different investment products</li>
@@ -82,11 +118,12 @@
                with securities laws of the respective jurisdictions (firms which are not authorized
                to provide investment services in the jurisdiction which issued the alert or warning).
             </p>
-            <button style="background-color: #2A245B;color: white;" class="btn">Be An Investor at Ata Plus</button>
          </div>
       </div>
+      <div class="btn">
+         <button style="background-color: #2A245B;color: white;" class="btn">Be An Investor at Ata Plus</button>
+      </div>
    </div>
-   <!-- container-->
 </section>
 <section id="reason" class="reason-section">
    <div class="container-new">
@@ -100,7 +137,8 @@
       <div class="mobilecrowsel" style="width: 100%; margin: 0 auto;text-align: center;">
          <mobile-carousel [slides]="slide2" (currentIndexChanged)="onSlideChange($event)">
             <div class="slide-container">
-               <div class="slide {{obj2().class}}" [ngStyle]="{ 'background-image': getCurrentSlideUrl2(currentIndex) }">
+               <div class="slide {{obj2().class}}"
+                  [ngStyle]="{ 'background-image': getCurrentSlideUrl2(currentIndex) }">
                </div>
             </div>
             <div [innerHTML]="obj2().title"
@@ -111,6 +149,37 @@
       </div>
    </div>
    <!-- container-->
+</section>
+<section id="investroadmap" class="investroadmap-section">
+   <div class="container-roadmap">
+      <div class="roadimg">
+         <img src="../../assets/images/issuerrodmap.png" alt="Hero Image">
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+   </div>
 </section>
 <section id="articles" class="article-section">
    <div class="container-new">
@@ -126,12 +195,21 @@
                <li>
                   Certified True Copy of the Statutory Documents (eSSM Superform or M&A, Forms 9/13, 44, 24, 49)
                </li>
-               <li>Business Plan</li>
-               <li>Audited Accounts</li>
-               <li>Management Accounts</li>
+               <div class="reqDoc">
+                  <div>
+                     <li>Business Plan</li>
+                     <li>Audited Accounts</li>
+                     <li>Management Accounts</li>
+                  </div>
+                  <div>
+                     <img src="../../assets/images/AtaPlus-62.png" alt="Hero Image">
+                  </div>
+               </div>
             </ol>
-            <button style="background-color: #2A245B;color: white;" class="btn">Raise funds with Ata Plus</button>
          </div>
+      </div>
+      <div class="btn">
+         <button style="background-color: #2A245B;color: white;" class="btn">Raise funds with Ata Plus</button>
       </div>
    </div>
    <!-- container-->

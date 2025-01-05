@@ -613,7 +613,7 @@ h2 {
     }
 
     .banner-flex .banner-flex-left {
-         width: 100%;        
+        width: 100%;
     }
 
     .banner-flex .banner-flex-left h1 {
@@ -670,7 +670,7 @@ h2 {
 
     .section-four .section-four-flex .four-flex-left {
         position: absolute;
-        margin-top: -13%;
+        margin-top: -50%;
         width: 86%;
     }
 
@@ -713,6 +713,10 @@ h2 {
 
     .record-section {
         padding: 60px 15px;
+
+        .container-new {
+            margin-bottom: 20%;
+        }
 
     }
 
@@ -945,3 +949,15 @@ h2 {
         margin-top: -89px;
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
