@@ -15,6 +15,10 @@ h2 {
     font-size: 43px;
 }
 
+.pink-bg {
+    font-size: 43px;
+}
+
 h3 {
     font-weight: bold;
     background-color: #E31997;
@@ -56,13 +60,13 @@ h3 {
 }
 
 .stat-box span {
-    font-size: 18px;
+    font-size: 15px;
     vertical-align: super;
 }
 
 li {
     color: #2A245B;
-    font-size: 19px;
+    font-size: 15px;
 }
 
 .stat-box .number {
@@ -76,7 +80,7 @@ li {
 }
 
 .stat-box p {
-    font-size: 18px;
+    font-size: 15px;
     margin: 10px 0 0;
     color: #2A245B;
 }
@@ -122,7 +126,7 @@ li {
     }
 
     p {
-        font-size: 19px;
+        font-size: 15px;
         font-weight: 600;
     }
 
@@ -375,7 +379,7 @@ li {
 
 .banner-flex .banner-flex-left p {
     color: #000;
-    font-size: 18px;
+    font-size: 15px;
     line-height: 28px;
     margin-bottom: 30px;
 }
@@ -592,10 +596,11 @@ li {
         padding-bottom: 0px;
         text-align: left;
 
-        // .becomeinv {
-        //     text-align: center;
-        //     width: 80%;
-        // }
+        .reason-section h2 span {
+            font-family: "Avenir-bold" !important;
+            position: relative;
+            font-size: 30px;
+        }
 
         p {
             font-size: 15px;

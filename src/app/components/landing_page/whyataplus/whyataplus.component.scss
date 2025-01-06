@@ -68,7 +68,7 @@ h2 {
 .banner-button .btn {
     display: block;
     margin-bottom: 15px;
-    width: 175px;
+    width: auto;
     text-decoration: none;
 }
 
@@ -154,8 +154,8 @@ h2 {
 
     .downarr {
         position: absolute;
-        left: 269px;
-        // top: 10px;
+        right: 503px;
+        top: 73px;
     }
 }
 
@@ -371,8 +371,6 @@ h2 {
 }
 
 .record-section .whatwe {
-    text-align: left;
-
     img {
         height: 100px;
     }
@@ -441,6 +439,10 @@ h2 {
 
 
 @media only screen and (max-width:767px) {
+
+    .record-section .whatwe {
+        text-align: left;
+    }
 
     .banner-flex .banner-flex-left {
         width: 80%;
