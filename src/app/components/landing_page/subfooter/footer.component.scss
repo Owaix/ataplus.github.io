@@ -42,7 +42,7 @@
 
 @media only screen and (max-width:767px) {
   .footer-top {
-    background-image: url('../../../../assets/images/AtaPlus-64.png');
+    background-image: url('../../../../assets/images/AtaPlus-64a.png');
   }
 
   .footer-top .btn-right {
@@ -60,8 +60,7 @@
 
   .footer-top {
     margin-top: -150px;
-
-    background-size: 100% 100%;
+    // background-size: 100% 100%;
     background-repeat: no-repeat;
   }
 }
