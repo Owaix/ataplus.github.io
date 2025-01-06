@@ -99,7 +99,6 @@ li {
 #hero {
     background-color: #E9E9FF;
     margin-top: -92px;
-    padding-bottom: 150px;
     padding-top: 50px;
 }
 
@@ -414,6 +413,7 @@ li {
 .reason-section h2 span {
     font-family: "Avenir-bold" !important;
     position: relative;
+    font-size: 30px;
 }
 
 .reason-section h2 span::before {
@@ -609,6 +609,10 @@ li {
 
         h2 {
             width: 100%;
+
+            .pink-bg {
+                width: 100% !important;
+            }
         }
     }
 
@@ -715,7 +719,7 @@ li {
         margin-top: -84px;
         padding-top: 0;
         display: block;
-        height: 833px;
+        height: auto;
     }
 
     #hero .banner-flex .banner-flex-left h1 {

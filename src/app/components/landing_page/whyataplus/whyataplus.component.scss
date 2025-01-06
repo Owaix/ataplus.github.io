@@ -46,6 +46,7 @@ h2 {
 .article-section {
     .right {
         text-align: right;
+
         .img {
             width: 30%;
         }
@@ -53,6 +54,7 @@ h2 {
 
     .left {
         text-align: left;
+
         .img {
             width: 30%;
         }
@@ -158,13 +160,17 @@ h2 {
 }
 
 .banner-flex {
-    display: flex;
     justify-content: space-between;
     padding-top: 50px;
 }
 
 .banner-flex .banner-flex-left {
-    width: 90%;
+    width: 49%;
+    margin-top: 5%;
+
+    .text img {
+        width: 80%;
+    }
 }
 
 .banner-flex .banner-flex-left h1 {
@@ -194,7 +200,7 @@ h2 {
 
 .banner-flex .banner-flex-left p {
     color: #000;
-    font-size: 26px;
+    font-size: 19px;
     text-align: left;
 }
 
@@ -438,7 +444,13 @@ h2 {
     .banner-flex {}
 
     .banner-flex .banner-flex-left {
-        width: 100%;
+        width: 80%;
+        padding-left: 10px;
+        margin-top: 13%;
+
+        .text img {
+            width: 100%;
+        }
     }
 
     .banner-flex .banner-flex-left h1 {
@@ -459,7 +471,7 @@ h2 {
     .banner-button .btn {
         display: block;
         margin-bottom: 15px;
-        width: 175px;
+        width: auto;
         text-decoration: none;
     }
 
@@ -615,12 +627,11 @@ h2 {
     }
 
     .container-new {
-        max-width: 1170px;
+        width: auto;
         margin: auto;
         padding-left: 35px;
         padding-right: 35px;
         padding-bottom: 0px;
-        text-align: -webkit-center;
     }
 
     .article-section {

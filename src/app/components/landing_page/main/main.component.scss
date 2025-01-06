@@ -64,19 +64,6 @@ h2 {
     color: #2A245B;
 }
 
-// section {
-//     min-height: 70vh;
-//     transition: 1s;
-
-//     .divs {
-//         width: 250px;
-//     }
-
-//     &.section {
-//         background-size: cover;
-//         background-position: top;
-//     }
-// }
 
 .header,
 .header2 {
@@ -412,6 +399,7 @@ h2 {
 .reason-section h2 span {
     font-family: "Avenir-bold" !important;
     position: relative;
+    font-size: 43px;
 }
 
 .reason-section h2 span::before {
@@ -576,6 +564,7 @@ h2 {
 
 .section-four .section-four-flex .four-flex-left .ata-bg {
     position: relative;
+    font-size: 36px;
 }
 
 .section-four .section-four-flex .four-flex-left .ata-bg:before {
@@ -621,7 +610,7 @@ h2 {
     .banner-flex .banner-flex-left {
         width: 80%;
         padding-left: 10px;
-        margin-top: 10%;
+        margin-top: 13%;
 
         .text img {
             width: 100%;
@@ -835,6 +824,10 @@ h2 {
 @media (min-width:360px) and (max-width:740px) {
     h2 {
         font-size: 36px;
+
+        .pink-bg {
+            font-size: 36px !important;
+        }
     }
 
     .capital-display .amount {
