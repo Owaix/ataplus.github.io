@@ -142,6 +142,22 @@ li {
         }
     }
 
+    .reqDoc2 {
+        display: flex;
+
+        .left {
+            width: 90%;
+        }
+
+        .right {
+            width: 10%;
+
+            img {
+                width: 25% !important;
+            }
+        }
+    }
+
     .arrow {
         width: 20%;
     }
@@ -475,7 +491,10 @@ li {
 
 .container-three {
     width: 90%;
-    // display: flex;
+
+    img {
+        width: 50%;
+    }
 }
 
 .article-one h2 {
@@ -710,6 +729,10 @@ li {
     .container-three {
         width: 100%;
         display: block;
+
+        img {
+            width: 88% !important;
+        }
     }
 
     .section-four .section-four-flex {
@@ -865,6 +888,23 @@ li {
     li {
         color: #2A245B;
         font-size: 15px;
+    }
+
+    .reqDoc2 {
+        display: flex;
+
+        .left {
+            width: 80% !important;
+        }
+
+        .right {
+            width: 20% !important;
+
+            .img {
+                width: 49% !important;
+                padding-top: 63px;
+            }
+        }
     }
 }
 
