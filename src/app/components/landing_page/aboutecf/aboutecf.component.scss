@@ -132,6 +132,14 @@ li {
 
     .reqDoc {
         display: flex;
+
+        .left {
+            width: 60%;
+        }
+
+        .right {
+            width: 40%;
+        }
     }
 
     .arrow {
@@ -226,7 +234,7 @@ li {
     .icon3 {
         width: 100% !important;
         height: 140px !important;
-        margin-left: 25px !important;
+        margin-left: 0px !important;
     }
 
     .icon4 {
@@ -312,6 +320,10 @@ li {
         width: 65%;
         height: 228px;
         margin-left: 42px;
+    }
+
+    .header36 {
+        font-size: 36px !important;
     }
 }
 
@@ -417,7 +429,6 @@ li {
 .reason-section h2 span {
     font-family: "Avenir-bold" !important;
     position: relative;
-    font-size: 30px;
 }
 
 .reason-section h2 span::before {
@@ -612,13 +623,17 @@ li {
             width: 75%;
         }
 
+        .whatdoc {
+            width: 120% !important;
+        }
+
         h2 {
             width: 100%;
-
-            .pink-bg {
-                width: 100% !important;
-            }
         }
+    }
+
+    .pink-bg {
+        font-size: 30px;
     }
 
     .container-roadmap {

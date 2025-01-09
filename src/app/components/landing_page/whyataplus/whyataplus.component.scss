@@ -61,9 +61,7 @@ h2 {
     }
 }
 
-.banner-button {
-    padding-left: 15px;
-}
+.banner-button {}
 
 .banner-button .btn {
     display: block;
@@ -460,13 +458,13 @@ h2 {
 
     .banner-flex .banner-flex-left p {
         margin-bottom: 15px;
-        padding-left: 15px;
+        padding-left: 10px;
         line-height: 27px;
         text-align: left;
     }
 
     .banner-button {
-        padding-left: 15px;
+        text-align: -webkit-center;
     }
 
     .banner-button .btn {
@@ -489,21 +487,25 @@ h2 {
         display: block;
         width: 100%;
         margin-left: 0;
+        margin-top: 15%;
+        margin-bottom: 15%;
 
         img {
-            width: 64%;
+            width: 50%;
         }
     }
 
     .container-three {
+        padding-top: 15%;
         width: 100%;
     }
 
     .container-one {
         width: 100%;
+        padding-bottom: 15%;
 
         img {
-            width: 100%;
+            width: 76%;
         }
     }
 
@@ -545,6 +547,16 @@ h2 {
     }
 
     .article-section h2 {
+        font-size: 30px;
+        line-height: 36px;
+    }
+
+    #entrepreneurs .container-new h2 {
+        text-align: left;
+    }
+
+    #reason .container-new h2 {
+        text-align: left;
         font-size: 30px;
         line-height: 36px;
     }
@@ -633,6 +645,11 @@ h2 {
         padding-left: 35px;
         padding-right: 35px;
         padding-bottom: 0px;
+        text-align: center;
+
+        p {
+            letter-spacing: 0px;
+        }
     }
 
     .article-section {
