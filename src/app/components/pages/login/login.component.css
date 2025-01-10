@@ -102,7 +102,7 @@ button:hover:not(:disabled) {
 
   button {
     padding: 8px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .error {

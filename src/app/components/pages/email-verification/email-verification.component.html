@@ -1,6 +1,17 @@
-<div class="signup-success">
+<div *ngIf="isNew" class="signup-success">
     <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
     <h1 class="header">Sign Up Successful!</h1>
+    <p class="message">Congratulations! You have signed up successfully.</p>
+    <p class="otp-message">An OTP has been sent to your mobile number. Please enter it below:</p>
+    <div class="otp-input-section">
+        <input [(ngModel)]="otp" type="text" placeholder="Enter OTP" class="otp-textbox">
+        <button (click)="submit()" class="submit-button">Submit</button>
+    </div>
+</div>
+
+<div *ngIf="!isNew" class="signup-success">
+    <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
+    <h1 class="header">Forgot Your Password!</h1>
     <p class="message">Congratulations! You have signed up successfully.</p>
     <p class="otp-message">An OTP has been sent to your mobile number. Please enter it below:</p>
     <div class="otp-input-section">

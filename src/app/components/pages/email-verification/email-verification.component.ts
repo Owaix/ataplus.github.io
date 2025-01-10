@@ -14,6 +14,7 @@ export class EmailVerificationComponent implements OnInit {
   otp: string = '';
   email: string = '';
   phoneno: string = '';
+  isNew: boolean = false;
 
   constructor(
     private service: ApiService,

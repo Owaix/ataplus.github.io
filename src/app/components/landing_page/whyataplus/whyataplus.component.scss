@@ -185,14 +185,14 @@ h2 {
 }
 
 .banner-flex .banner-flex-left h1 span::before {
-    content: '';
+    content: "";
     position: absolute;
-    // background: url(../../../../assets/images/AtaPlus-04.png);
+    background: url(../../../../assets/images/AtaPlus-04.png);
     background-repeat: no-repeat;
-    width: 312px;
-    height: 22px;
-    bottom: -10px;
-    left: -211px;
+    width: 289px;
+    height: 21px;
+    bottom: 0px;
+    left: -365px;
     background-size: cover;
 }
 
@@ -443,7 +443,7 @@ h2 {
     }
 
     .banner-flex .banner-flex-left {
-        width: 80%;
+        width: 83%;
         padding-left: 10px;
         margin-top: 5%;
 
@@ -537,13 +537,17 @@ h2 {
     }
 
     #hero .banner-flex .banner-flex-left h1 {
-        font-size: 42px;
+        font-size: 38px;
         line-height: 44px;
         text-align: left;
     }
 
     .banner-flex .banner-flex-left h1 span::before {
-        width: 175px;
+        width: 190px;
+        height: 13px;
+        bottom: -10px;
+        background-size: cover;
+        left: -211px;
     }
 
     .article-section h2 {
