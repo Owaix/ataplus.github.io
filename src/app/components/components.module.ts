@@ -25,6 +25,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { MobileSlideComponent } from "./shared/mobileslider/slidercomponent.component";
 import { ExsliderComponent } from './shared/exslider/exslider.component';
 import { WebSliderComponent } from "./shared/webslider/carousal.component";
+import { VerifyComponent } from "./pages/verify/verify.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -33,6 +34,7 @@ const routes: Routes = [
   { path: 'whyata', component: WhyAtaplus },
   { path: 'whatecf', component: AboutECF },
   { path: 'home', component: HomeComponent },
+  { path: 'verify/:type', component: VerifyComponent },
 ];
 
 const routerOptions: ExtraOptions = {
@@ -64,8 +66,9 @@ const routerOptions: ExtraOptions = {
     WhyAtaplus,
     WebSliderComponent,
     HomeComponent,
-    MobileSlideComponent,    
-    ExsliderComponent
+    MobileSlideComponent,
+    ExsliderComponent,
+    VerifyComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [

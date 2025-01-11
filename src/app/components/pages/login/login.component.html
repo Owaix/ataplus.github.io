@@ -9,7 +9,8 @@
             <br>
             <div style="text-align: left;" class="input-group">
                 <label for="email">Username</label>
-                <input value="aowais37@gmail.com" type="text" id="email" name="email" [(ngModel)]="users.email" required #emailField="ngModel" />
+                <input value="aowais37@gmail.com" type="text" id="email" name="email" [(ngModel)]="users.email" required
+                    #emailField="ngModel" />
                 <div *ngIf="emailField.invalid && emailField.touched" class="error">
                     email is required
                 </div>
@@ -18,8 +19,8 @@
             <div style="text-align: left;" class="input-group">
                 <label for="password">Password</label>
                 <div style="position: relative;">
-                    <input value="Ziawospmahc@1" [type]="showPassword ? 'text' : 'password'" id="password" name="password"
-                        [(ngModel)]="users.password" required
+                    <input value="Ziawospmahc@1" [type]="showPassword ? 'text' : 'password'" id="password"
+                        name="password" [(ngModel)]="users.password" required
                         [ngClass]="{'is-invalid': passwordField.invalid && passwordField.touched}" minlength="6"
                         #passwordField="ngModel" pattern="(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{6,}" />
                     <button type="button" (click)="showPassword = !showPassword"
@@ -46,7 +47,8 @@
             <br>
             <br>
             <br>
-            <a style="text-decoration: none;color: black;font-weight: 700;" href="">Forgot Password</a>
+            <a [routerLink]="['/everif', '', 'true']" style="text-decoration: none;color: black;font-weight: 700;"
+                href="">Forgot Password</a>
             <br>
             <br>
             <br>

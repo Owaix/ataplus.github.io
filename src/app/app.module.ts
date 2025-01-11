@@ -11,8 +11,7 @@ import { EmailVerificationComponent } from './components/pages/email-verificatio
 import { LoaderComponent } from './components/shared/loader/loader/loader.component';
 
 const routes: Routes = [
-  { path: 'verify', component: VerifyComponent },
-  { path: 'everif/:phoneno', component: EmailVerificationComponent }
+  { path: 'everif/:phoneno/:type', component: EmailVerificationComponent }
 ];
 
 const routerOptions: ExtraOptions = {
@@ -23,7 +22,6 @@ const routerOptions: ExtraOptions = {
 @NgModule({
   declarations: [
     AppComponent,
-    VerifyComponent,
     LoaderComponent
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { catchError, Subscription, throwError } from 'rxjs';
+import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/service/api.service';
 
 @Component({
@@ -10,10 +11,13 @@ import { ApiService } from 'src/app/service/api.service';
 })
 
 export class VerifyComponent implements OnInit {
-
+  isReset = false;
+  showPassword = false;
+  showCnfrmPassword = false;
+  users: User = new User;
   checkIconClass = 'fas fa-check-circle';
-  emailVerifiedMessage = 'Email Verified Successfully';
-  thankYouMessage = 'Thank you for verifying your email address!';
+  emailVerifiedMessage = 'Phone # Verified Successfully';
+  thankYouMessage = 'Thank you for verifying your Phone #!';
   accountReadyMessage = 'Your account is now ready to use.';
   nextStepsTitle = 'Next Steps';
   nextSteps = [
@@ -27,8 +31,8 @@ export class VerifyComponent implements OnInit {
 
   errorIconClass = 'fas fa-exclamation-circle';
   tokenExpiredMessage = 'Your access token has  expired!';
-  tokenExpiredInstructions = 'Your verification token has expired. Please click below to send a new verification email.';
-  resendEmailText = 'RESEND EMAIL';
+  tokenExpiredInstructions = 'Your verification token has expired. Please click below to send a new OTP.';
+  resendEmailText = 'RESEND OTP';
 
   token: string | null = null;
   isExpire = false;
@@ -50,6 +54,10 @@ export class VerifyComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.isReset = params['type'] == "true";
+      console.log(params['type']);
+    })
   }
   openModal() {
     throw new Error('Method not implemented.');
@@ -60,5 +68,10 @@ export class VerifyComponent implements OnInit {
       this.mySubscription.unsubscribe();
     }
   }
+  onSubmit() {
 
+  }
+  get passwordMismatch() {
+    return this.users.password !== this.users.confirm_password;
+  }
 }

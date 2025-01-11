@@ -1,4 +1,4 @@
-<div *ngIf="isNew" class="signup-success">
+<div *ngIf="!isReset" class="signup-success">
     <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
     <h1 class="header">Sign Up Successful!</h1>
     <p class="message">Congratulations! You have signed up successfully.</p>
@@ -9,16 +9,40 @@
     </div>
 </div>
 
-<div *ngIf="!isNew" class="signup-success">
+<div *ngIf="isReset && !nowReset" class="signup-success">
     <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
     <h1 class="header">Forgot Your Password!</h1>
-    <p class="message">Congratulations! You have signed up successfully.</p>
+    <p class="message">Enter your registered phone # and we will send you and OTP to reset your password.</p>
+    <form (ngSubmit)="emailtoreset()" #loginForm="ngForm">
+        <div class="input-group">
+            <label for="phoneno">Mobile Phone Number</label>
+            <input type="text" id="phoneno" name="phoneno" [(ngModel)]="phoneno" required #phonenoField="ngModel"
+                (keypress)="validatePhoneNumber($event)" (ngModelChange)="checkPhoneNumberFormat()" />
+            <div *ngIf="phonenoField.invalid && phonenoField.touched" class="error">
+                Phone Number is required
+            </div>
+            <div *ngIf="phoneNumberError" class="error">
+                Phone Number should be in the format +60xxxxxxxxxx
+            </div>
+        </div>
+        <button type="submit" class="links" [disabled]="loginForm.invalid">Create Account</button>
+    </form>
+</div>
+
+<div *ngIf="isReset && nowReset" class="signup-success">
+    <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
+    <h1 class="header">Reset Your Password!</h1>
     <p class="otp-message">An OTP has been sent to your mobile number. Please enter it below:</p>
     <div class="otp-input-section">
         <input [(ngModel)]="otp" type="text" placeholder="Enter OTP" class="otp-textbox">
         <button (click)="submit()" class="submit-button">Submit</button>
     </div>
 </div>
+
+<app-modal *ngIf="isModalOpen" [errortitle]="errortitle" (close)="closeModal()">
+    <h2>{{errortitle}}</h2>
+    <p style="font-size: 19px;">{{errormsg}}</p>
+</app-modal>
 <br>
 <br>
 <br>

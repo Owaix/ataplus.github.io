@@ -10,6 +10,11 @@
   font-family: 'Avenir-Regular' !important
 }
 
+.error {
+  color: red;
+  font-size: 14px;
+}
+
 .logo {
   width: 80%;
   /* Responsive logo size */

@@ -456,11 +456,17 @@ h2 {
         padding-left: 15px;
     }
 
-    .banner-flex .banner-flex-left p {
-        margin-bottom: 15px;
-        padding-left: 10px;
-        line-height: 27px;
-        text-align: left;
+    .banner-flex .banner-flex-left {
+        .para {
+            width: 88%;
+
+            p {
+                margin-bottom: 15px;
+                padding-left: 10px;
+                line-height: 27px;
+                text-align: left;
+            }
+        }
     }
 
     .banner-button {
@@ -537,8 +543,8 @@ h2 {
     }
 
     #hero .banner-flex .banner-flex-left h1 {
-        font-size: 38px;
-        line-height: 44px;
+        font-size: 35px;
+        line-height: 41px;
         text-align: left;
     }
 
