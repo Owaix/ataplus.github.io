@@ -34,7 +34,7 @@ const routes: Routes = [
   { path: 'whyata', component: WhyAtaplus },
   { path: 'whatecf', component: AboutECF },
   { path: 'home', component: HomeComponent },
-  { path: 'verify/:type', component: VerifyComponent },
+  { path: 'verify/:type/:phoneno', component: VerifyComponent },
 ];
 
 const routerOptions: ExtraOptions = {

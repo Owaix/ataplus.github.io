@@ -22,7 +22,7 @@ export class EmailVerificationComponent implements OnInit {
   showPassword = false;
   errortitle = 'ALERT';
   phoneNumberError = false;
-
+  encPhone: string = '';
 
   private mySubscription: Subscription | null = null;  // Initialized as null
 
@@ -35,35 +35,40 @@ export class EmailVerificationComponent implements OnInit {
   ) {
     this.loaderService.hide();
   }
+
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+      this.encPhone = params['phoneno'];
       this.phoneno = this.encrypt.decrypt(params['phoneno']);
-      console.log(params['type']);
       this.isReset = params['type'] == "true";
-      this.router.navigate(['/verify', this.isReset]);
     })
   }
 
-  emailtoreset() {
+  submit() {
     if (!this.phoneNumberError) {
+      console.log(this.phoneno);
+      this.loaderService.show();
+
       this.mySubscription = this.service.sendotp({ phoneno: this.phoneno }).pipe(
         catchError(err => {
           this.loaderService.hide();
-          if (err.status === 400) {
-            this.errormsg = err.error.message;
-          } else {
-            this.errormsg = err.error.message;
-          }
+          this.errormsg = err.error?.message || 'An error occurred';
           return throwError(() => new Error(err));
         })
-      ).subscribe(
-        response => {
-          this.nowReset = true
+      ).subscribe({
+        next: response => {
+          this.loaderService.hide();
+          this.nowReset = true;
         },
-        error => {
-          console.log('Error:', error);
+        error: error => {
+          this.loaderService.hide();
+          this.openModal();
+          this.errormsg = 'Phone # verification failed';
+        },
+        complete: () => {
+          console.log('OTP submission process completed.');
         }
-      );
+      });
     }
   }
 
@@ -82,19 +87,21 @@ export class EmailVerificationComponent implements OnInit {
     this.isModalOpen = false;
   }
 
-  submit() {
+  verify() {
     if (this.otp != '') {
       this.service.verify({
         phoneno: this.phoneno,
         otp: this.otp
       }).subscribe((data) => {
-        this.router.navigate(['/verify', this.isReset]);
+        this.router.navigate(['/verify', this.isReset, this.encrypt.encrypt(this.phoneno)]);
       },
         (error) => {
-          alert('Invalid OTP. Please try again.');
+          this.openModal();
+          this.errormsg = error.error.message;
         })
     }
   }
+
   validatePhoneNumber(event: KeyboardEvent): void {
 
   }

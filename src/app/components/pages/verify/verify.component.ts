@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { catchError, Subscription, throwError } from 'rxjs';
+import { Subscription } from 'rxjs';
 import { User } from 'src/app/models/User';
 import { ApiService } from 'src/app/service/api.service';
+import { EncryptionService } from 'src/app/service/encrypt.service';
 
 @Component({
   selector: 'app-verify',
@@ -26,7 +27,7 @@ export class VerifyComponent implements OnInit {
     'Contact support if you encounter issues.'
   ];
   loginText = 'LOG IN';
-  loginLink = 'login'; // Link path
+  loginLink = 'login';
   linkColor = 'white';
 
   errorIconClass = 'fas fa-exclamation-circle';
@@ -36,9 +37,14 @@ export class VerifyComponent implements OnInit {
 
   token: string | null = null;
   isExpire = false;
-  private mySubscription: Subscription | null = null;  // Initialized as null
+  encPhone = '';
+  private mySubscription: Subscription | null = null;
 
-  constructor(private route: ActivatedRoute, private service: ApiService, private router: Router) { }
+  constructor(
+    private encrypt: EncryptionService,
+    private route: ActivatedRoute,
+    private service: ApiService,
+    private router: Router) { }
   updateForExpiredToken(): void {
     this.checkIconClass = this.errorIconClass;
     this.emailVerifiedMessage = this.tokenExpiredMessage;
@@ -55,8 +61,8 @@ export class VerifyComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
+      this.encPhone = this.encrypt.decrypt(params['phoneno']);
       this.isReset = params['type'] == "true";
-      console.log(params['type']);
     })
   }
   openModal() {
@@ -68,9 +74,17 @@ export class VerifyComponent implements OnInit {
       this.mySubscription.unsubscribe();
     }
   }
-  onSubmit() {
 
+  onSubmit() {
+    if (this.users.password) {
+      this.service.reset({ phone: this.encPhone, password: this.users.password }).subscribe(x => {
+        this.isReset = false;
+        this.emailVerifiedMessage = 'Account password reset successfully';
+        this.thankYouMessage = 'Thank you for verifying your Phone #!';
+      })
+    }
   }
+
   get passwordMismatch() {
     return this.users.password !== this.users.confirm_password;
   }

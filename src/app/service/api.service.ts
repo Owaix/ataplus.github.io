@@ -29,4 +29,7 @@ export class ApiService {
     verify(obj: any): Observable<any> {
         return this.http.post(environment.BASE_URL + 'users/verify-otp', obj);
     }
+    reset(obj: any): Observable<any> {
+        return this.http.post(environment.BASE_URL + 'users/reset', obj);
+    }
 }

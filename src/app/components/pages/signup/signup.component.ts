@@ -53,7 +53,7 @@ export class SignupComponent implements OnInit {
             phoneno: response.user.phoneno
           }).subscribe(data => {
             let phoneno = this.encrypt.encrypt(response.user.phoneno);
-            this.router.navigate(['/everif',phoneno]);
+            this.router.navigate(['/everif','false',phoneno]);
           })
           //localStorage.setItem('token', response.data.access_token);
           // this.authService.login(this.users.email);

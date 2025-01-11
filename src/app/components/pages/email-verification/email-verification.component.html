@@ -5,7 +5,7 @@
     <p class="otp-message">An OTP has been sent to your mobile number. Please enter it below:</p>
     <div class="otp-input-section">
         <input [(ngModel)]="otp" type="text" placeholder="Enter OTP" class="otp-textbox">
-        <button (click)="submit()" class="submit-button">Submit</button>
+        <button (click)="verify()" class="submit-button">Submit</button>
     </div>
 </div>
 
@@ -13,7 +13,7 @@
     <img src="../../../../assets/images/AtaPlus-11.png" alt="Logo" class="logo">
     <h1 class="header">Forgot Your Password!</h1>
     <p class="message">Enter your registered phone # and we will send you and OTP to reset your password.</p>
-    <form (ngSubmit)="emailtoreset()" #loginForm="ngForm">
+    <form (ngSubmit)="submit()" #loginForm="ngForm">
         <div class="input-group">
             <label for="phoneno">Mobile Phone Number</label>
             <input type="text" id="phoneno" name="phoneno" [(ngModel)]="phoneno" required #phonenoField="ngModel"
@@ -25,7 +25,9 @@
                 Phone Number should be in the format +60xxxxxxxxxx
             </div>
         </div>
-        <button type="submit" class="links" [disabled]="loginForm.invalid">Create Account</button>
+        <br>
+        <button type="submit" style="background-color: #2A245B;color: white;" class="btn"
+            [disabled]="loginForm.invalid">Send OTP</button>
     </form>
 </div>
 
@@ -35,7 +37,7 @@
     <p class="otp-message">An OTP has been sent to your mobile number. Please enter it below:</p>
     <div class="otp-input-section">
         <input [(ngModel)]="otp" type="text" placeholder="Enter OTP" class="otp-textbox">
-        <button (click)="submit()" class="submit-button">Submit</button>
+        <button (click)="verify()" class="submit-button">Submit</button>
     </div>
 </div>
 
