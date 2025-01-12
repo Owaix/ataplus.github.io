@@ -23,9 +23,6 @@ export class ApiService {
     sendotp(obj: any): Observable<any> {
         return this.http.post(environment.BASE_URL + 'users/send-otp', obj);
     }
-    get_question(id: string, report_id: string): Observable<any> {
-        return this.http.get(environment.BASE_URL + 'topic/question/' + id + '/report/' + report_id);
-    }
     verify(obj: any): Observable<any> {
         return this.http.post(environment.BASE_URL + 'users/verify-otp', obj);
     }

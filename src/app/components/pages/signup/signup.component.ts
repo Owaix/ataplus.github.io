@@ -20,6 +20,8 @@ export class SignupComponent implements OnInit {
   showCnfrmPassword = false;
   errortitle = 'ALERT';
   phoneNumberError = false;
+  acceptPrivacyPolicy = false;
+  acceptTerms = false;
 
   constructor(
     private service: ApiService,
@@ -53,7 +55,7 @@ export class SignupComponent implements OnInit {
             phoneno: response.user.phoneno
           }).subscribe(data => {
             let phoneno = this.encrypt.encrypt(response.user.phoneno);
-            this.router.navigate(['/everif','false',phoneno]);
+            this.router.navigate(['/everif', phoneno, 'false']);
           })
           //localStorage.setItem('token', response.data.access_token);
           // this.authService.login(this.users.email);

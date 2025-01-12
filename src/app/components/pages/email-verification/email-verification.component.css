@@ -78,6 +78,12 @@
   background-color: #2A245B;
 }
 
+@media only screen and (max-width:767px) {
+  .signup-success {
+    margin: 15%;
+  }
+}
+
 /* Responsive Styles */
 @media (max-width: 600px) {
   .header {
@@ -93,17 +99,14 @@
 
   .otp-input-section {
     flex-direction: column;
-    /* Stack inputs on smaller screens */
     gap: 10px;
   }
 
   .otp-textbox {
-    width: 100%;
-    /* Full-width textbox on mobile */
+    width: 90%;
   }
 
   .submit-button {
     width: 100%;
-    /* Full-width button on mobile */
   }
 }
