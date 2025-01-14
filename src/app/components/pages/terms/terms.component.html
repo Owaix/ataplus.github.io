@@ -4,242 +4,551 @@
         <p class="header-text">To know is to make the right decision. We’ll be clear and straight up with you.</p>
     </div>
 
-    <nav class="tabs">
-        <div class="tab" [class.active]="selectedTab === 'terms'" (click)="selectTab('terms')">
-            Terms of Use
-        </div>
-        <div class="tab" [class.active]="selectedTab === 'risk'" (click)="selectTab('risk')">
-            Risk Warning
-        </div>
-        <div class="tab" [class.active]="selectedTab === 'guidelines'" (click)="selectTab('guidelines')">
-            Guidelines & Eligibility
-        </div>
-        <div class="tab" [class.active]="selectedTab === 'privacy'" (click)="selectTab('privacy')">
-            Privacy Policy
-        </div>
-    </nav>
+    <div class="md-content" (swipeleft)="swipe(selectedIndex, $event.type)"
+        (swiperight)="swipe(selectedIndex, $event.type)">
+        <mat-tab-group mat-stretch-tabs [(selectedIndex)]="selectedIndex" (selectedIndexChange)="selectChange()">
+            <ng-container *ngFor="let tab of tabs">
+                <mat-tab [label]="tab.title " (swipeleft)="swipe(tab.id, $event.type)"
+                    (swiperight)="swipe(tab.id, $event.type)">
+                    <div class="content">
+                        <br>
+                        <br>
+                        <div *ngIf="tab.value == 'terms'">
+                            <h1>Term of Use</h1>
+                            <p> Current passwordKindly read these TERMS OF USE (the “Terms of Use”) carefully before
+                                accessing and using
+                                the services offered by Ata Plus Sdn Bhd (along with its subsidiaries and affiliated
+                                companies) (“ATA
+                                PLUS”).</p>
+                            <p>This page sets forth the legally binding Terms of Use for your use of the website at
+                                www.ata-plus.com
+                                (along with its subdomains and all other sites owned and operated by ATA PLUS which
+                                redirects to
+                                www.ata-plus.com) (the “ECF Platform”), and all services owned and provided by ATA PLUS
+                                arising from and
+                                / or in connection with the ECF Platform (the “Service”).</p>
+                            <p>By accessing, using and  / or relying on the ECF Platform or the Service in any manner,
+                                including but not
+                                limited to visiting, or browsing the ECF Platform, contributing content, information, or
+                                other materials
+                                thereto, you are deemed to be a user of the Platform (“User”) and to have read,
+                                understood and agreed to
+                                be bound by the Terms of Use, Risk Warning, Guidelines and Eligibility and Privacy
+                                Policy as stated on
+                                the ECF Platform, along with any ancillary statements, policies and / or documents
+                                arising therefrom.
+                            </p>
+                            <p>The Terms of Use may be updated from time to time without notice. If at any time you do
+                                not agree to
+                                these Terms of Use, please refrain from using the ECF Platform. If you continue to use
+                                the ECF Platform
+                                after any changes are made to these Terms of Use, you will be deemed to have agreed to
+                                those changes.
+                            </p>
+                            <p>ATA PLUS reserves the exclusive right to grant, limit, refuse, suspend and / or prohibit
+                                access to all or
+                                any part of the  Service and / or ECF Platform and to seek the appropriate legal
+                                remedies for any breach
+                                of the Terms of Use herein.</p>
 
-    <div class="content">
-        <div *ngIf="selectedTab === 'terms'">
-            <h1>Term of Use</h1>
-            <p> Current passwordKindly read these TERMS OF USE (the “Terms of Use”) carefully before accessing and using
-                the services offered by Ata Plus Sdn Bhd (along with its subsidiaries and affiliated companies) (“ATA
-                PLUS”).</p>
-            <p>This page sets forth the legally binding Terms of Use for your use of the website at www.ata-plus.com
-                (along with its subdomains and all other sites owned and operated by ATA PLUS which redirects to
-                www.ata-plus.com) (the “ECF Platform”), and all services owned and provided by ATA PLUS arising from and
-                / or in connection with the ECF Platform (the “Service”).</p>
-            <p>By accessing, using and  / or relying on the ECF Platform or the Service in any manner, including but not
-                limited to visiting, or browsing the ECF Platform, contributing content, information, or other materials
-                thereto, you are deemed to be a user of the Platform (“User”) and to have read, understood and agreed to
-                be bound by the Terms of Use, Risk Warning, Guidelines and Eligibility and Privacy Policy as stated on
-                the ECF Platform, along with any ancillary statements, policies and / or documents arising therefrom.
-            </p>
-            <p>The Terms of Use may be updated from time to time without notice. If at any time you do not agree to
-                these Terms of Use, please refrain from using the ECF Platform. If you continue to use the ECF Platform
-                after any changes are made to these Terms of Use, you will be deemed to have agreed to those changes.
-            </p>
-            <p>ATA PLUS reserves the exclusive right to grant, limit, refuse, suspend and / or prohibit access to all or
-                any part of the  Service and / or ECF Platform and to seek the appropriate legal remedies for any breach
-                of the Terms of Use herein.</p>
+                            <h1> Summary of Service</h1>
+                            <p> ATA PLUS is the Recognized Market Operator of the ECF Platform registered by the
+                                Securities Commission
+                                of
+                                Malaysia pursuant to section 34 of the Capital Markets and Services Act 2007.  The ECF
+                                Platform allows
+                                Private Limited Companies / Limited Liability Partnerships (“Issuers”) to raise funds
+                                via the process of
+                                equity crowdfunding on the ECF Platform by offering its shares / equity for sale and
+                                subscription to the
+                                public.  Users who visit and use  the ECF Platform are able to participate in this
+                                process by amongst
+                                others, creating profiles, browsing, and / or investing in Issuers who have been listed
+                                on the ECF
+                                Platform.
+                                The ECF Platform also allows its users to interact, network, learn about, and connect
+                                with each other.
+                            </p>
 
-            <h1> Summary of Service</h1>
-            <p> ATA PLUS is the Recognized Market Operator of the ECF Platform registered by the Securities Commission
-                of
-                Malaysia pursuant to section 34 of the Capital Markets and Services Act 2007.  The ECF Platform allows
-                Private Limited Companies / Limited Liability Partnerships (“Issuers”) to raise funds via the process of
-                equity crowdfunding on the ECF Platform by offering its shares / equity for sale and subscription to the
-                public.  Users who visit and use  the ECF Platform are able to participate in this process by amongst
-                others, creating profiles, browsing, and / or investing in Issuers who have been listed on the ECF
-                Platform.
-                The ECF Platform also allows its users to interact, network, learn about, and connect with each other.
-            </p>
+                            <p> The statements under the Risk Warning and Guidelines & Eligibility (as stated on the ECF
+                                Platform) are
+                                made
+                                in accordance with the Guidelines on Recognized Markets issued by the Securities
+                                Commission of Malaysia
+                                pursuant to section 377 of the CapitaI Markets and Services Act 2007 (“CMSA”). In that
+                                regard, the
+                                following
+                                classifications / terminologies apply to the Users of the ECF Platform where
+                                appropriate: </p>
 
-            <p> The statements under the Risk Warning and Guidelines & Eligibility (as stated on the ECF Platform) are
-                made
-                in accordance with the Guidelines on Recognized Markets issued by the Securities Commission of Malaysia
-                pursuant to section 377 of the CapitaI Markets and Services Act 2007 (“CMSA”). In that regard, the
-                following
-                classifications / terminologies apply to the Users of the ECF Platform where appropriate: </p>
+                            <h3> Sophisticated Investor:</h3>
 
-            <h3> Sophisticated Investor:</h3>
+                            <p> Refers to High Net-Worth individuals, i.e. individuals with a total wealth or net
+                                personal assets
+                                exceeding
+                                RM 3 million or its equivalent in foreign currencies; OR</p>
+                             
+                            <p> High Net-Worth Entities (Companies / Corporations) i.e. a corporation with total net
+                                assets exceeding RM
+                                10
+                                million or its equivalent in foreign currencies based on its last audited accounts.</p>
 
-            <p> Refers to High Net-Worth individuals, i.e. individuals with a total wealth or net personal assets
-                exceeding
-                RM 3 million or its equivalent in foreign currencies; OR</p>
-             
-            <p> High Net-Worth Entities (Companies / Corporations) i.e. a corporation with total net assets exceeding RM
-                10
-                million or its equivalent in foreign currencies based on its last audited accounts.</p>
+                            <h3> Angel Investor:</h3>
 
-            <h3> Angel Investor:</h3>
+                            <p> Refers to a tax resident in Malaysia whose total net personal assets exceed RM3 million
+                                or gross total
+                                annual income is not less than RM180,000 or jointly with his or her spouse, has a gross
+                                total annual
+                                income
+                                exceeding RM250,000.</p>
 
-            <p> Refers to a tax resident in Malaysia whose total net personal assets exceed RM3 million or gross total
-                annual income is not less than RM180,000 or jointly with his or her spouse, has a gross total annual
-                income
-                exceeding RM250,000.</p>
+                            <h3> Retail Investor:</h3>
 
-            <h3> Retail Investor:</h3>
+                            <p> Refers to investors that do not fall under the categories of either Sophisticated
+                                Investor or Angel
+                                Investor.</p>
 
-            <p> Refers to investors that do not fall under the categories of either Sophisticated Investor or Angel
-                Investor.</p>
+                            <h3> Issuer/Entrepreneur:</h3>
 
-            <h3> Issuer/Entrepreneur:</h3>
+                            <p> A user hosted on ATA PLUS equity crowdfunding platofrm ("Site") to offer its shares on
+                                the platform
+                                (referred to as 'Entrepreneur' on the platform)</p>
+                             
+                            <p> ATA PLUS is a platform that permits Issuers to offer and sell shares in their Company
+                                directly or
+                                indirectly
+                                (as a “Registered Recognised Market Operator” by Security Commission Malaysia) which may
+                                be accessed at
+                                www.ata-plus.com</p>
+                            <h1> Disclaimer</h1>
+                            <p> By accessing, using and / or relying on the ECF Platform or the Service, the User
+                                understands and agrees
+                                that:</p>
 
-            <p> A user hosted on ATA PLUS equity crowdfunding platofrm ("Site") to offer its shares on the platform
-                (referred to as 'Entrepreneur' on the platform)</p>
-             
-            <p> ATA PLUS is a platform that permits Issuers to offer and sell shares in their Company directly or
-                indirectly
-                (as a “Registered Recognised Market Operator” by Security Commission Malaysia) which may be accessed at
-                www.ata-plus.com</p>
-            <h1> Disclaimer</h1>
-            <p> By accessing, using and / or relying on the ECF Platform or the Service, the User understands and agrees
-                that:</p>
+                            <p> The ECF Platform is operated on an “as is” and “as available” basis. ATA PLUS makes no
+                                warranty or
+                                representation that the ECF Platform or Service will meet the User’s requirements, that
+                                it will be of
+                                satisfactory quality, that it will be fit for a particular purpose, that it will not
+                                infringe the rights
+                                of
+                                third parties, that it will be compatible with all systems, that it will be secure or
+                                that all
+                                information
+                                provided will be accurate.</p>
 
-            <p> The ECF Platform is operated on an “as is” and “as available” basis. ATA PLUS makes no warranty or
-                representation that the ECF Platform or Service will meet the User’s requirements, that it will be of
-                satisfactory quality, that it will be fit for a particular purpose, that it will not infringe the rights
-                of
-                third parties, that it will be compatible with all systems, that it will be secure or that all
-                information
-                provided will be accurate.</p>
+                            <p> ATA PLUS makes no guarantee of any particular outcome from the User’s access, use and /
+                                or reliance on
+                                the
+                                ECF Platform or Service.</p>
 
-            <p> ATA PLUS makes no guarantee of any particular outcome from the User’s access, use and / or reliance on
-                the
-                ECF Platform or Service.</p>
+                            <p> No part of theECF Platform or Service shall constitute or be construed as advice on any
+                                legal,
+                                investment or
+                                financial matters and ATA PLUS is under no circumstances a party or responsible for any
+                                agreements,
+                                settlements and / or arrangements entered into between the Users as between themselves
+                                or any third
+                                parties.</p>
 
-            <p> No part of theECF Platform or Service shall constitute or be construed as advice on any legal,
-                investment or
-                financial matters and ATA PLUS is under no circumstances a party or responsible for any agreements,
-                settlements and / or arrangements entered into between the Users as between themselves or any third
-                parties.</p>
+                            <p> ATA PLUS does not negotiate terms for and on behalf of the Users or third parties.</p>
 
-            <p> ATA PLUS does not negotiate terms for and on behalf of the Users or third parties.</p>
+                            <p> ATA PLUS does not compensate its employees, agents or other persons affiliated with ATA
+                                PLUS for any
+                                solicitation, referral or sale of shares on the ECF Platform.</p>
 
-            <p> ATA PLUS does not compensate its employees, agents or other persons affiliated with ATA PLUS for any
-                solicitation, referral or sale of shares on the ECF Platform.</p>
+                            <p> The User’s access, use and / or reliance on the ECF Platform or the Service is voluntary
+                                and made at the
+                                User’s own risk. The User shall bear full responsibility to  seek the appropriate
+                                independent legal and
+                                / or
+                                financial advice and conduct their own independent due diligence on any matters arising
+                                from or in
+                                connection with the ECF Platform or Service as the User may require. </p>
 
-            <p> The User’s access, use and / or reliance on the ECF Platform or the Service is voluntary and made at the
-                User’s own risk. The User shall bear full responsibility to  seek the appropriate independent legal and
-                / or
-                financial advice and conduct their own independent due diligence on any matters arising from or in
-                connection with the ECF Platform or Service as the User may require. </p>
-
-            <p> ATA PLUS provides no warranty or guarantee that the ECF Platform is free of viruses, malicious computer
-                code
-                or other forms of interference that may damage the User’s computer or any other devices, or that access
-                to
-                the ECF Platform will be uninterrupted, timely or secure.</p>
-            <h1> Eligibility To Use The Services</h1>
-            <p> Users under 18 years of age are not eligible to use the Service without the consent and supervision from
-                a
-                parent or legal guardian who is at least 18 years old and who shall be similarly bound by these Terms of
-                Use
-                and responsible for the Users’ access, use and / or reliance on the ECF Platform or Service. Users who
-                have
-                been suspended by ATA PLUS from accessing and using the ECF Platform shall no longer be eligible to use
-                or
-                receive the Service.</p>
-             
-            <p> For the avoidance of doubt, ATA PLUS as the operator of the ECF Platform and provider of the Service
-                retains
-                the exclusive right to limit, restrict and / or prohibit the User’s access and / or use of the ECF
-                Platform
-                or Service (whether wholly or partly) at any time as it deems necessary or appropriate, and with or
-                without
-                prior notice to the User.</p>
-
-
-            <h1> User Accounts</h1>
-            <p> All information provided by the User to ATA PLUS in connection with a User’s account / profile in
-                respect of
-                the ECF Platform and the Service is required to be accurate, complete and truthful. The User shall be
-                fully
-                responsible for monitoring all activity in respect of its User account / profile and notifying ATA PLUS
-                immediately if their User account / profile has been used without their authorisation, if there is any
-                breach of security and / or if there is any false, misleading, incomplete and / or inaccurate
-                information in
-                respect of the same. The User also agrees to provide any additional information and / or documentation
-                as
-                required by ATA PLUS to verify the User’s identity and to otherwise perform ATA PLUS’ role and
-                responsibilities as the operator of the ECF Platform and provider of the Service.</p>
-
-
-            <h1> Objectionable Material</h1>
-            <p> The User understands that by accessing, using and / or relying on the ECF Platform or Service, the User
-                may
-                encounter material or content that the User may find offensive, indecent, objectionable or explicit.
-                Nevertheless, the User agrees that any access,  use and / or reliance on the ECF Platform or Service is
-                at
-                the User’s own risk and discretion and that the User shall not hold ATA PLUS liable in respect of the
-                same.</p>
-            <h1> Ownership</h1>
-            <p> All content and material published on the Platform shall be deemed to be owned by ATA PLUS and subject
-                to
-                protection by Malaysian intellectual property laws and rights applicable to the ATA PLUS in respect of
-                the
-                same.</p>
-            <h1> Indemnity</h1>
-            <p> The User shall indemnify and hold harmless ATA PLUS and its directors, employees, affiliates,
-                representatives and agents from all claims, losses, damages, liabilities, costs, expenses and / or harm
-                incurred by the User or any third party arising from or in connection with the User’s access, use and /
-                or
-                reliance on the ECF Platform or Service. ATA PLUS reserves the right to adopt the exclusive defense and
-                control over any matter in that regard and the User shall assist and cooperate with ATA PLUS in any
-                defense
-                and / or settlement in respect of the same.</p>
-            <h1> Governing Law</h1>
-            <p> The User agrees that the Service shall be deemed to be based in Malaysia and shall be governed by the
-                laws
-                of Malaysia.</p>
-            <h1> Miscellaneous</h1>
-            <p> The Users acknowledge and agree that the Terms of Use, Risk Warning, Guidelines and Eligibility and
-                Privacy
-                Policy herein contained on the ECF Platform governs the User’s access, use and / or reliance on the ECF
-                Platform or the Service. If at any time any provision herein is held to be illegal, void, voidable and /
-                or
-                unenforceable, that provision shall be read down to the extent necessary to ensure that the same is not
-                so
-                illegal, invalid, void, voidable and / or unenforceable and / or is to be severable without affecting
-                the
-                validity or enforceability of the remaining provisions. ATA PLUS reserves the right to take any steps
-                which
-                ATA PLUS deems necessary or appropriate to enforce and / or verify compliance with the provisions
-                herein.
-                ATA PLUS’ failure to enforce any rights or provisions in the Terms of Use and Privacy Policy herein
-                shall
-                not constitute or be construed as a waiver of the same.</p>
-            <h1> Notice</h1>
-            <p> Any communication / notification from ATA PLUS to the Users arising from or in connection with the ECF
-                Platform or Service shall be effective upon delivery by hand, email and / or registered post or by any
-                other
-                means which the User has by its conduct accepted or acknowledged to be appropriate.</p>
-             
-            <p> Any communication / notification from the User to ATA PLUS arising or in connection with the ECF
-                Platform or
-                the Service shall be effective upon receipt by ATA PLUS by hand, email and / or registered post at the
-                following addresses:
-            <ul>
-                <li> Reference : Ata Plus Sdn Bhd</li>
-                <li> Address : B-23A-3A, G Vestor Tower, Pavilion Embassy, 200 Jalan Ampang, 50450 Kuala Lumpur,
-                    Malaysia.</li>
-                <li> Email :    info@ata-plus.com</li>
-            </ul>
+                            <p> ATA PLUS provides no warranty or guarantee that the ECF Platform is free of viruses,
+                                malicious computer
+                                code
+                                or other forms of interference that may damage the User’s computer or any other devices,
+                                or that access
+                                to
+                                the ECF Platform will be uninterrupted, timely or secure.</p>
+                            <h1> Eligibility To Use The Services</h1>
+                            <p> Users under 18 years of age are not eligible to use the Service without the consent and
+                                supervision from
+                                a
+                                parent or legal guardian who is at least 18 years old and who shall be similarly bound
+                                by these Terms of
+                                Use
+                                and responsible for the Users’ access, use and / or reliance on the ECF Platform or
+                                Service. Users who
+                                have
+                                been suspended by ATA PLUS from accessing and using the ECF Platform shall no longer be
+                                eligible to use
+                                or
+                                receive the Service.</p>
+                             
+                            <p> For the avoidance of doubt, ATA PLUS as the operator of the ECF Platform and provider of
+                                the Service
+                                retains
+                                the exclusive right to limit, restrict and / or prohibit the User’s access and / or use
+                                of the ECF
+                                Platform
+                                or Service (whether wholly or partly) at any time as it deems necessary or appropriate,
+                                and with or
+                                without
+                                prior notice to the User.</p>
 
 
-        </div>
-        <div *ngIf="selectedTab === 'risk'">
-            <h1>Risk Warning</h1>
-            <p>Content for Risk Warning goes here.</p>
-        </div>
-        <div *ngIf="selectedTab === 'guidelines'">
-            <h1>Guidelines & Eligibility</h1>
-            <p>Content for Guidelines & Eligibility goes here.</p>
-        </div>
-        <div *ngIf="selectedTab === 'privacy'">
-            <h1>Privacy Policy</h1>
-            <p>Content for Privacy Policy goes here.</p>
-        </div>
+                            <h1> User Accounts</h1>
+                            <p> All information provided by the User to ATA PLUS in connection with a User’s account /
+                                profile in
+                                respect of
+                                the ECF Platform and the Service is required to be accurate, complete and truthful. The
+                                User shall be
+                                fully
+                                responsible for monitoring all activity in respect of its User account / profile and
+                                notifying ATA PLUS
+                                immediately if their User account / profile has been used without their authorisation,
+                                if there is any
+                                breach of security and / or if there is any false, misleading, incomplete and / or
+                                inaccurate
+                                information in
+                                respect of the same. The User also agrees to provide any additional information and / or
+                                documentation
+                                as
+                                required by ATA PLUS to verify the User’s identity and to otherwise perform ATA PLUS’
+                                role and
+                                responsibilities as the operator of the ECF Platform and provider of the Service.</p>
+
+
+                            <h1> Objectionable Material</h1>
+                            <p> The User understands that by accessing, using and / or relying on the ECF Platform or
+                                Service, the User
+                                may
+                                encounter material or content that the User may find offensive, indecent, objectionable
+                                or explicit.
+                                Nevertheless, the User agrees that any access,  use and / or reliance on the ECF
+                                Platform or Service is
+                                at
+                                the User’s own risk and discretion and that the User shall not hold ATA PLUS liable in
+                                respect of the
+                                same.</p>
+                            <h1> Ownership</h1>
+                            <p> All content and material published on the Platform shall be deemed to be owned by ATA
+                                PLUS and subject
+                                to
+                                protection by Malaysian intellectual property laws and rights applicable to the ATA PLUS
+                                in respect of
+                                the
+                                same.</p>
+                            <h1> Indemnity</h1>
+                            <p> The User shall indemnify and hold harmless ATA PLUS and its directors, employees,
+                                affiliates,
+                                representatives and agents from all claims, losses, damages, liabilities, costs,
+                                expenses and / or harm
+                                incurred by the User or any third party arising from or in connection with the User’s
+                                access, use and /
+                                or
+                                reliance on the ECF Platform or Service. ATA PLUS reserves the right to adopt the
+                                exclusive defense and
+                                control over any matter in that regard and the User shall assist and cooperate with ATA
+                                PLUS in any
+                                defense
+                                and / or settlement in respect of the same.</p>
+                            <h1> Governing Law</h1>
+                            <p> The User agrees that the Service shall be deemed to be based in Malaysia and shall be
+                                governed by the
+                                laws
+                                of Malaysia.</p>
+                            <h1> Miscellaneous</h1>
+                            <p> The Users acknowledge and agree that the Terms of Use, Risk Warning, Guidelines and
+                                Eligibility and
+                                Privacy
+                                Policy herein contained on the ECF Platform governs the User’s access, use and / or
+                                reliance on the ECF
+                                Platform or the Service. If at any time any provision herein is held to be illegal,
+                                void, voidable and /
+                                or
+                                unenforceable, that provision shall be read down to the extent necessary to ensure that
+                                the same is not
+                                so
+                                illegal, invalid, void, voidable and / or unenforceable and / or is to be severable
+                                without affecting
+                                the
+                                validity or enforceability of the remaining provisions. ATA PLUS reserves the right to
+                                take any steps
+                                which
+                                ATA PLUS deems necessary or appropriate to enforce and / or verify compliance with the
+                                provisions
+                                herein.
+                                ATA PLUS’ failure to enforce any rights or provisions in the Terms of Use and Privacy
+                                Policy herein
+                                shall
+                                not constitute or be construed as a waiver of the same.</p>
+                            <h1> Notice</h1>
+                            <p> Any communication / notification from ATA PLUS to the Users arising from or in
+                                connection with the ECF
+                                Platform or Service shall be effective upon delivery by hand, email and / or registered
+                                post or by any
+                                other
+                                means which the User has by its conduct accepted or acknowledged to be appropriate.</p>
+                             
+                            <p> Any communication / notification from the User to ATA PLUS arising or in connection with
+                                the ECF
+                                Platform or
+                                the Service shall be effective upon receipt by ATA PLUS by hand, email and / or
+                                registered post at the
+                                following addresses:
+                            <ul>
+                                <li> Reference : Ata Plus Sdn Bhd</li>
+                                <li> Address : B-23A-3A, G Vestor Tower, Pavilion Embassy, 200 Jalan Ampang, 50450 Kuala
+                                    Lumpur,
+                                    Malaysia.</li>
+                                <li> Email :    info@ata-plus.com</li>
+                            </ul>
+
+
+                        </div>
+                        <div *ngIf="tab.value == 'risk'">
+                            <h1>Risk Warning</h1>
+                            <p> ATA PLUS is glad to host a list of issuers, its businesses and potential investors on
+                                the
+                                ECF Platform. We are passionate about financial inclusion as well as matching lucrative
+                                businesses with investors to bring about positive social and economic outcomes. However,
+                                it
+                                is important for users to understand the characteristics and the workings of an equity
+                                crowdfunding marketplace.</p>
+
+                            <p> The following are key characteristics that define ECF:</p>
+                            <ul>
+                                <li> Issuers using ATA PLUS' ECF Platform include start-ups, early stage and growth
+                                    stage
+                                    businesses. Investment in these types of businesses carries a considerable level of
+                                    risk.</li>
+                                <li> As with all other investments, there is a risk that your investment may not
+                                    materialize in a
+                                    profit or you may lose your entire investment amount. You must be in a position to
+                                    bear this
+                                    risk without undue hardship.</li>
+                                <li> The law as stipulated under the Security Commission's regulation on equity
+                                    crowdfunding
+                                    requires people who offer financial products to give basic corporate and financial
+                                    information to investors before they invest.</li>
+                                <li> However, kindly note that not all information of the Issuer is required to be
+                                    disclosed or
+                                    made available on the Platform. As such, there may be particular information which
+                                    you as an
+                                    investor may not be able to obtain through the Platform. </li>
+                                <li> It is therefore essential for investors to utilize their rights prior to committing
+                                    to
+                                    invest by asking questions, reading all information given carefully, and seeking
+                                    independent
+                                    professional advice if necessary.</li>
+                            </ul>
+
+                            <p> Risks involved in investing in early-stage as well as growing businesses can be listed
+                                as
+                                followsRisks involved in investing in early-stage as well as growing businesses can be
+                                listed as follows:</p>
+                            <ul>
+                                <li> <b>Uncertainty of returns: </b>Depending on the shareholders’ agreement (which
+                                    differs from
+                                    business to business), certain companies may opt not to pay dividends, therefore
+                                    depriving
+                                    investors of early and short-term returns. Businesses often reinvest what they earn
+                                    in the
+                                    growth or survival of the business, which may be the priority for both business
+                                    owners and
+                                    shareholders.</li>
+
+                                <li> <b> Lack of liquidity: </b>There is no guarantee that an investor will be able to
+                                    sell their
+                                    shares
+                                    when they want to and to whom. Currently, there is no recognized secondary market
+                                    for
+                                    trading shares in companies funded by equity crowdfunding. (Please read more on
+                                    ‘exit
+                                    strategy’ in our FAQ section).</li>
+
+                                <li> <b> Dilution: </b>The same company that reaches its funding target may need more
+                                    funding to
+                                    grow or
+                                    survive at a later stage. It is possible that the company may issue more shares,
+                                    thus
+                                    decreasing the value of the shares as offered previously on listing.</li>
+
+                                <li> <b> Material events:</b>Start-up and growing businesses often have highly
+                                    specialized and
+                                    focused</li>
+                                <li> <b> offerings. </b>This may lead to vulnerability of the business to internal and
+                                    external threats,
+                                    making it difficult for the business to absorb material events such as loss of key
+                                    personnel
+                                    and customers</li>
+
+                                <li> <b> Lack of control:</b> Businesses rarely give up a big portion of their shares to
+                                    investors,
+                                    making most investors a minority shareholder individually or collectively. Minority
+                                    shareholders have little or no influence on how the company is run. Having said
+                                    that, as a
+                                    concerned shareholder, investors may make enquiries as well as to offer assistance
+                                    in ways
+                                    that the business owners see fit.</li>
+                            </ul>
+                            <p> As a rule of thumb for all potential investors, investments made through equity
+                                crowdfunding
+                                should be in the effort to diversify one’s portfolio and to spread risks. Investors are
+                                highly advised to acquire as much information on the business they want to invest in
+                                order
+                                to make an informed investment decision and to carry out an independent due diligence if
+                                necessary.</p>
+                        </div>
+                        <div *ngIf="tab.value == 'guidelines'">
+                            <h1>Guidelines & Eligibility</h1>
+                            For Investor
+                            ATA PLUS’ ECF Platform is open to all types of investors subject to compliance with the
+                            Security Commission’s investment limits which are applicable to the following investor
+                            types:
+
+                            Sophisticated Investors : No restriction on investment amount
+
+                            Angel Investors : A maximum of RM 500,000 within a 12-month period
+
+                            Retail Investors : A maximum of RM 5,000 per issuer with a total amount of not more than RM
+                            50,000 within a 12-month period
+
+                            Investors who choose to invest in an Issuer also benefit from a cooling-off period of six
+                            (6) business days commencing on the date the investment is made, within which investors  are
+                            free to cancel / withdraw their investment should they change their mind and obtain a refund
+                            of their investment.
+                            For Issuers
+                            Being listed on the ECF Platform is an attractive and innovative way for Issuers to raise
+                            funds as such listings will not require the Securities Commission’s approval under section
+                            212 of the Capital Market and Services Act 2007 nor is it subject to the requirement of
+                            having to register a prospectus.
+                             
+                            Micro-funds are also permitted by the Securities Commission under its Guidelines to
+                            participate and raise unlimited funds from sophisticated investors and angel investors
+                            through the ECF platform, provided the micro-fund also meets the criteria prescribed by the
+                            Securities Commission under its Guidelines.
+                             
+                            Only MALAYSIAN incorporated private limited companies (excluding exempt private companies),
+                            unlisted public limited companies, limited liability partnerships, and registered
+                            micro-funds are  allowed to raise funds on the ECF Platform, whereas  the following entities
+                            are prohibited by the Securities Commission under its Guidelines from raising funds through
+                            the ECF Platform:
+
+                            Commercially or financially complex structures (i.e. investment fund companies or financial
+                            institutions);
+                            public listed companies and their subsidiaries;
+                            companies with no specific business plan or its business plan is to merge or acquire an
+                            unidentified entity (i.e. blind pool);
+                            companies other than a micro-fund that propose to use the funds raised to provide loans or
+                            invest in other entities;
+                            companies with a paid up share capital exceeding RM 10 million; and
+                            any other type of entity that is specified by the Securities Commission.
+
+                            An issuer is also NOT ALLOWED to be hosted or raise funds concurrently on multiple equity
+                            crowdfunding platforms.
+                             
+                            An issuer can only utilize the ECF platform to raise a maximum amount of RM 20 million
+                            during its entire lifetime, excluding the issuer’s own capital contribution or any funding
+                            obtained through private placement exercises.
+                            Disclosure Requirements
+                            Issuers which intend to be listed on the ECF Platform to raise funds are required to
+                            disclose the following information / documents to ATA PLUS  and the investors:
+
+                            Information that explains the key characteristics of the issuer;
+                            information that explains the purpose of the listing and the targeted fundraised  amount;
+                            information relating to the business plan of the issuer; and
+                            financial information relating to the issuer which include:
+                            for Offerings below RM 300,000.00 : certified financial statements / information by the
+                            issuer's management, if it is required by ATA PLUS for verification purposes;
+
+                            for Offerings between RM 300,000.00 to RM 500,000.00:
+
+                            Audited financial statements of the issuer where applicable (e.g. where the issuer has been
+                            established for at least 12 months); and
+                            Where audited financial statements are unavailable (e.g. the issuer is newly established),
+                            certified financial statements / information by the issuer’s management
+
+                            for Offerings above RM 500,000.00 : Audited financial statements of the issuer.M 500,000.00:
+                        </div>
+                        <div *ngIf="tab.value == 'privacy'">
+                            <h1>Privacy Policy</h1>
+                            ATA PLUS is committed to protecting your personal information when using the Service
+                            provided by the Site. We have crafted this Privacy Policy for you to understand how and why
+                            we gather information, how we store it, and how you can access and edit that information as
+                            well as when we might disclose information to other parties.
+
+                            Consent to gather User's personal information
+
+                            By accessing ATA PLUS Site, contacting ATA PLUS and/or using the Service provided by the
+                            Site, you consent to the collection and use of your personal information in accordance with
+                            this Privacy Policy.
+
+                            ATA PLUS will gather personal information submitted by you through the Site, regarding
+                            information on your browsing activity when using the site, any communication with ATA PLUS
+                            directly via writing, phone or email and information obtained through the use of the
+                            Service.
+
+                            ATA PLUS may, in addition to other information, gather the following general information
+                            about you :
+
+                            Your name, email address, residential address, telephone number, date of birth and password.
+                            Preference information such as Watch List, transaction history and marketing preferences.
+                            Information on your business such as your company name and number, company details and key
+                            personnel as well as professional profile.
+                            Information that you provide to ATA PLUS via writing, email or phone.
+                            Details of your browser, domain name and IP address, and the details of any website you
+                            linked from to the Site.
+                            Information obtained from third parties in accordance with this Privacy Policy.
+                            Other additional information required from time to time.
+                            If you choose not to provide information when requested, you may not be able to fully
+                            utilize the Site and its Services.
+
+
+                            Use of User's personal information
+
+                            The information that ATA PLUS gathers from you may be used for a number of purposes relating
+                            to the functions and Services provided by the portal, which include :
+                            To assess and ascertain your suitability to register an account with ATA PLUS and utilize
+                            the Services.
+                            Performing the Services and any assistance required in connection with the Services.
+                            In case of entrepreneurs/issuers seeking capital, to verify and approved the disclosures you
+                            make to potential investors.
+                            Provide you with information about products and services and new investment opportunities
+                            that ATA PLUS thinks may be of your interest.
+                            To allow third parties with whom ATA PLUS is partnered with (Partners) to provide you with
+                            information about products, services, and other opportunities that they (Partners) think may
+                            be of interest to you.
+                            To contact you to ensure customer satisfaction in respect of ATA PLUS’ role as the Service
+                            provider.
+                            To monitor, improve and administer the Site
+                            Responding and following up on any queries, complaints or requests you might have, and other
+                            customer care issues.
+                            To enable ATA PLUS to conduct surveys and analyze information pertaining to the User of the
+                            Services of the Site.
+                            To enable ATA PLUS to comply with legal and regulatory obligations or in connection with
+                            legal proceedings, crime or fraud prevention, detection or prosecution.
+                            Verifying any information provided to ATA PLUS by you with third parties and third party
+                            databases, including Government agencies.
+                            Carrying out credit checks on the Company with a credit reporting agency for the
+                            requirements of the Anti-Money Laundering And Anti-Terrorism Financing (Amendment) Act 2014.
+                            This will require ATA PLUS to supply the credit reporting agency with your information.
+                             
+                            You understand that if ATA PLUS disclose your personal information to a credit reporting
+                            agency, they may hold your information on their credit reporting database and use it for
+                            providing credit reporting services and for any other lawful purpose and they may disclose
+                            your information to their subscribers for the purpose of credit checking or debt collection
+                            or for any other lawful purpose.
+
+
+                        </div>
+                    </div>
+                </mat-tab>
+            </ng-container>
+        </mat-tab-group>
     </div>
 </div>

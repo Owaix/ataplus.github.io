@@ -1,23 +1,36 @@
 .terms-container {
     padding: 20px;
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
+
+    li {
+        font-size: 0.9em;
+        color: #555;
+        margin-bottom: 15px;
+
+        b {
+            color: black;
+            font-weight: bold;
+        }
+    }
 
     h1,
     .logo-and-header {
         text-align: center;
         margin-top: 5%;
+        font-size: 1.1em;
         margin-bottom: 3%;
+        font-family: "Avenir-regular" !important;
     }
 
     .logo-and-header {
         .logo {
-            max-width: 150px;
+            max-width: 60%;
             margin: 0 auto 10px;
         }
 
         .header-text {
-            font-size: 1.2em;
+            font-size: 1em;
             color: #333;
             margin-bottom: 20px;
         }
@@ -46,7 +59,7 @@
 
     .content {
         h1 {
-            font-size: 1.5em;
+            font-size: 1.1em;
             margin-bottom: 10px;
         }
 
@@ -81,5 +94,5 @@
 }
 
 .terms-container {
-    margin-bottom: 20%;
+    margin-bottom: 40%;
 }

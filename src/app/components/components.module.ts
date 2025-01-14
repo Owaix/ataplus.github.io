@@ -27,6 +27,8 @@ import { ExsliderComponent } from './shared/exslider/exslider.component';
 import { WebSliderComponent } from "./shared/webslider/carousal.component";
 import { VerifyComponent } from "./pages/verify/verify.component";
 import { TermsComponent } from './pages/terms/terms.component';
+import { MatTabsModule } from '@angular/material/tabs'; // Import MatTabsModule
+import { HammerModule } from "@angular/platform-browser";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -50,7 +52,9 @@ const routerOptions: ExtraOptions = {
     RouterModule.forRoot(routes, routerOptions),
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatTabsModule,
+    HammerModule 
   ],
   declarations: [
     Header,
