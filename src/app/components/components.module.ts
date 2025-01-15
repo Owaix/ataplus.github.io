@@ -29,6 +29,7 @@ import { VerifyComponent } from "./pages/verify/verify.component";
 import { TermsComponent } from './pages/terms/terms.component';
 import { MatTabsModule } from '@angular/material/tabs'; // Import MatTabsModule
 import { HammerModule } from "@angular/platform-browser";
+import { CharterComponent } from "./pages/charter/charter.component";
 
 const routes: Routes = [
   { path: '', component: Main, data: { showHeader: true }, },  // Redirect from MasterPageComponent
@@ -38,6 +39,7 @@ const routes: Routes = [
   { path: 'whatecf', component: AboutECF },
   { path: 'home', component: HomeComponent },
   { path: 'terms', component: TermsComponent },
+  { path: 'charter', component: CharterComponent },
   { path: 'verify/:type/:phoneno', component: VerifyComponent },
 ];
 
@@ -54,7 +56,7 @@ const routerOptions: ExtraOptions = {
     HttpClientModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    HammerModule 
+    HammerModule
   ],
   declarations: [
     Header,
@@ -75,7 +77,8 @@ const routerOptions: ExtraOptions = {
     MobileSlideComponent,
     ExsliderComponent,
     VerifyComponent,
-    TermsComponent
+    TermsComponent,
+    CharterComponent
   ],
   providers: [ApiService, AuthService, EncryptionService],
   exports: [

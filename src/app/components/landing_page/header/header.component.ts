@@ -1,5 +1,6 @@
 import { Component, ViewChild, AfterViewInit, ElementRef, Input } from "@angular/core";
 import { AuthService } from "src/app/service/auth.service";
+import { MenuService } from "src/app/service/menu.service";
 
 @Component({
   selector: 'header',
@@ -17,7 +18,9 @@ export class Header implements AfterViewInit {
   userEmail: string | null = null;
   navigations = ['Who we are', 'What is ECP', 'Success Stories'];
 
-  constructor(private authService: AuthService, private elRef: ElementRef) { }
+  constructor(private menuService: MenuService,
+    private authService: AuthService,
+    private elRef: ElementRef) { }
 
   ngOnInit() {
     this.authService.isAuthenticated.subscribe((isAuth) => {
@@ -38,6 +41,7 @@ export class Header implements AfterViewInit {
       this.menu.nativeElement.classList.add('clicked');
       this.menu.nativeElement.style.display = 'none';
       this.close.nativeElement.style.display = 'block';
+      this.menuService.showMenu();
     }
   }
 
@@ -50,6 +54,7 @@ export class Header implements AfterViewInit {
         this.menu.nativeElement.style.display = 'block';
       }
       this.close.nativeElement.style.display = 'none';
+      this.menuService.closeMenu();
     }
   }
   onClickOutside(event: Event) {

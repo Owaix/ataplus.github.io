@@ -22,8 +22,16 @@ img {
   display: none;
 }
 
+header {
+  position: relative;
+  z-index: 1000; // Ensure this is higher than the charter component
+  // ...existing styles...
+}
+
 nav {
   display: none; // Hide by default
+  position: relative;
+  z-index: 1000; // Ensure this is higher than the charter component
 
   &.active {
     display: block; // Show when active

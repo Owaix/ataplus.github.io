@@ -9,7 +9,7 @@
     Plus</a>
   <a [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/whatecf" (click)="onNavItemClick()">What is
     ECF</a>
-  <a [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/aboutecf" (click)="onNavItemClick()">Success
+  <a [ngStyle]="{ 'color': isLanding ? 'white' : 'black' }" routerLink="/charter" (click)="onNavItemClick()">Success
     Stories</a>
   <a *ngIf="isLoggedIn" routerLink="/home" class="links" (click)="onNavItemClick()">MY ACCOUNT</a>
   <a *ngIf="!isLoggedIn" routerLink="/login" class="links" (click)="onNavItemClick()">LOG IN</a>
