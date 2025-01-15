@@ -60,6 +60,7 @@ export class LoginComponent implements OnInit {
           this.errormsg = '';
           //let token_secret = process.env['token_secret'] || "";
           //const encryptedToken = CryptoJS.AES.encrypt(x.data.access_token, token_secret).toString();
+          localStorage.setItem('id', response.id);
           localStorage.setItem('token', response.token);
           // this.mySubscription = this.service.GetProfile().subscribe(x => {
           //   //console.log(encryptedToken);

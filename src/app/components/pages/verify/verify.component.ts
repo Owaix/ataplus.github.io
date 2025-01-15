@@ -37,7 +37,7 @@ export class VerifyComponent implements OnInit {
 
   token: string | null = null;
   isExpire = false;
-  encPhone = '';
+  id = '0';
   private mySubscription: Subscription | null = null;
 
   constructor(
@@ -61,7 +61,7 @@ export class VerifyComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
-      this.encPhone = this.encrypt.decrypt(params['phoneno']);
+      this.id = this.encrypt.decrypt(params['id']);
       this.isReset = params['type'] == "true";
     })
   }
@@ -77,7 +77,7 @@ export class VerifyComponent implements OnInit {
 
   onSubmit() {
     if (this.users.password) {
-      this.service.reset({ phone: this.encPhone, password: this.users.password }).subscribe(x => {
+      this.service.reset({ id: this.id, password: this.users.password }).subscribe(x => {
         this.isReset = false;
         this.emailVerifiedMessage = 'Account password reset successfully';
         this.thankYouMessage = 'Thank you for verifying your Phone #!';

@@ -1,9 +1,10 @@
 <div class="home-page">
-    <section class="user-details" *ngIf="user">
-      <div class="card">
-        <h2>Welcome, {{ user.name }}!</h2>
-        <p><strong>Email:</strong> {{ user.email }}</p>
-        <p><strong>Member Since:</strong> {{ user.joinDate | date }}</p>
-      </div>
-    </section>
-  </div>
+  <section class="user-details" *ngIf="user">
+    <div class="card">
+      <h2>Welcome, {{ user.name }}!</h2>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Member Since:</strong> {{ user.joinDate | date }}</p>
+      <button (click)="reset()" class="btn">Reset Password</button>
+    </div>
+  </section>
+</div>

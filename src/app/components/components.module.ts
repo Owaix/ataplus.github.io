@@ -40,7 +40,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'terms', component: TermsComponent },
   { path: 'charter', component: CharterComponent },
-  { path: 'verify/:type/:phoneno', component: VerifyComponent },
+  { path: 'verify/:type/:id', component: VerifyComponent },
 ];
 
 const routerOptions: ExtraOptions = {

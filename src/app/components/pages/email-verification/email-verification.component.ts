@@ -46,7 +46,6 @@ export class EmailVerificationComponent implements OnInit {
 
   submit() {
     if (!this.phoneNumberError) {
-      console.log(this.phoneno);
       this.loaderService.show();
 
       this.mySubscription = this.service.sendotp({ phoneno: this.phoneno }).pipe(
@@ -93,7 +92,8 @@ export class EmailVerificationComponent implements OnInit {
         phoneno: this.phoneno,
         otp: this.otp
       }).subscribe((data) => {
-        this.router.navigate(['/verify', this.isReset, this.encrypt.encrypt(this.phoneno)]);
+        console.log(data);
+        this.router.navigate(['/verify', this.isReset, this.encrypt.encrypt(data.id.toString())]);
       },
         (error) => {
           this.openModal();
