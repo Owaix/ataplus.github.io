@@ -1,5 +1,4 @@
 import { Component, ElementRef } from '@angular/core';
-import * as exp from 'constants';
 import { Tabs } from '../terms/terms.component';
 import { MenuService } from 'src/app/service/menu.service';
 
@@ -8,9 +7,9 @@ import { MenuService } from 'src/app/service/menu.service';
   templateUrl: './charter.component.html',
   styleUrls: ['./charter.component.scss']
 })
+
 export class CharterComponent {
   selectedTab: string = 'terms';
-
 
   constructor(private menuService: MenuService, private elRef: ElementRef) { }
 
@@ -93,7 +92,7 @@ export class CharterComponent {
     }
 
     if (action === this.SWIPE_ACTION.RIGHT) {
-      const isFirst = this.selectedIndex === 0 /* starter point as 1 */;
+      const isFirst = this.selectedIndex === 0;
       this.selectedIndex = isFirst ? 1 : this.selectedIndex - 1;
       console.log("Swipe left - INDEX: " + this.selectedIndex);
     }
