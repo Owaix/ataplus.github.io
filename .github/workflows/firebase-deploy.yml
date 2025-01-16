@@ -28,5 +28,5 @@ jobs:
 
     - name: Deploy to Firebase
       env:
-        FIREBASE_TOKEN: 1//09sGK-sLzuZn4CgYIARAAGAkSNwF-L9IrHjXNuYppSiLAp98uwKn-76908amQv8bwsMsmf_TZjMlxCpcq28TDYUjf4j0LLpUAKNE
-      run: firebase deploy --only hosting
+        FIREBASE_TOKEN: 
+      run: firebase deploy --token ${{ secrets.FIREBASE_TOKEN }}
