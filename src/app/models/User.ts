@@ -7,4 +7,15 @@ export class User {
     password: string = '';
     confirm_password: string = '';
     phoneno: string = '';
+    nric_passport: string = '';
+    nationality: string = '';
+    gender: string = '';
+    dob: string = '';
+    address_line1: string = '';
+    address_line2: string = '';
+    city: string = '';
+    postcode: string = '';
+    state: string = '';
+    country: string = '';
+    investor_type: string = '';
 }

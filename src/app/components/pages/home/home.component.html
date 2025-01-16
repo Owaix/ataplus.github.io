@@ -1,10 +1,165 @@
 <div class="home-page">
   <section class="user-details" *ngIf="user">
-    <div class="card">
-      <h2>Welcome, {{ user.name }}!</h2>
-      <p><strong>Email:</strong> {{ user.email }}</p>
-      <p><strong>Member Since:</strong> {{ user.joinDate | date }}</p>
-      <button (click)="reset()" class="btn">Reset Password</button>
+    <div class="login-container">
+      <div class="card">
+        <h2>Hi, {{ user.name }}!</h2>
+        <button (click)="reset()" class="btn">Reset Password</button>
+      </div>
+
+      <div class="button-container">
+        <button (click)="onSubmit()" class="white-buttons">Portfolio</button>
+        <button (click)="onSubmit()" class="white-buttons">Personal Details</button>
+        <button (click)="onSubmit()" class="white-buttons">Settings</button>
+      </div>
+      <div class="main-container">
+        <div class="sub-container">
+          <img src="assets/images/tick.png" alt="Group 1" />
+          <p>Please complete your eKYC in order to make your investment to Ata Plus’s ECF campaigns.</p>
+        </div>
+        <button style="background-color: #2A245B;color: white;" class="btn" (click)="onSubmit()">eKYC Now</button>
+      </div>
+      <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+        <div class="input-group">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" [(ngModel)]="this.users.username" required
+            #usernameField="ngModel" />
+          <div *ngIf="usernameField.invalid && usernameField.touched" class="error">
+            User name is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="first_name">First Name (as per NRIC)</label>
+          <input type="text" id="first_name" name="first_name" [(ngModel)]="this.users.first_name" required
+            #first_nameField="ngModel" />
+          <div *ngIf="first_nameField.invalid && first_nameField.touched" class="error">
+            First Name is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="last_name">Last Name (as per NRIC)</label>
+          <input type="text" id="last_name" name="last_name" [(ngModel)]="this.users.last_name" required
+            #last_nameField="ngModel" />
+          <div *ngIf="last_nameField.invalid && last_nameField.touched" class="error">
+            Last Name is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="nric_passport">NRIC/ Passport Number</label>
+          <input type="text" id="nric_passport" name="nric_passport" [(ngModel)]="this.users.nric_passport" required
+            #nricPassportField="ngModel" />
+          <div *ngIf="nricPassportField.invalid && nricPassportField.touched" class="error">
+            NRIC/ Passport Number is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="nationality">Nationality</label>
+          <input type="text" id="nationality" name="nationality" [(ngModel)]="this.users.nationality" required
+            #nationalityField="ngModel" />
+          <div *ngIf="nationalityField.invalid && nationalityField.touched" class="error">
+            Nationality is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender" [(ngModel)]="this.users.gender" required #genderField="ngModel">
+            <option value="" disabled>Select Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
+          <div *ngIf="genderField.invalid && genderField.touched" class="error">
+            Gender is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob" [(ngModel)]="this.users.dob" required #dobField="ngModel" />
+          <div *ngIf="dobField.invalid && dobField.touched" class="error">
+            Date of Birth is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="phoneno">Mobile Phone Number</label>
+          <input type="text" id="phoneno" name="phoneno" [(ngModel)]="users.phoneno" required #phonenoField="ngModel"
+            (keypress)="validatePhoneNumber($event)" (ngModelChange)="checkPhoneNumberFormat()" />
+          <div *ngIf="phonenoField.invalid && phonenoField.touched" class="error">
+            Phone Number is required
+          </div>
+          <div *ngIf="phoneNumberError" class="error">
+            Phone Number should be in the format +60xxxxxxxxxx
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input type="text" id="email" name="email" [(ngModel)]="this.users.email" required #emailField="ngModel" />
+          <div *ngIf="emailField.invalid && emailField.touched" class="error">
+            Email is required
+          </div>
+        </div>
+        <h3>Primary Address</h3>
+        <div class="input-group">
+          <label for="address_line1">Address Line 1</label>
+          <input type="text" id="address_line1" name="address_line1" [(ngModel)]="this.users.address_line1" required
+            #addressLine1Field="ngModel" />
+          <div *ngIf="addressLine1Field.invalid && addressLine1Field.touched" class="error">
+            Address Line 1 is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="address_line2">Address Line 2</label>
+          <input type="text" id="address_line2" name="address_line2" [(ngModel)]="this.users.address_line2"
+            #addressLine2Field="ngModel" />
+        </div>
+        <div class="input-group">
+          <label for="city">City</label>
+          <input type="text" id="city" name="city" [(ngModel)]="this.users.city" required #cityField="ngModel" />
+          <div *ngIf="cityField.invalid && cityField.touched" class="error">
+            City is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="postcode">Postcode</label>
+          <input type="text" id="postcode" name="postcode" [(ngModel)]="this.users.postcode" required
+            #postcodeField="ngModel" />
+          <div *ngIf="postcodeField.invalid && postcodeField.touched" class="error">
+            Postcode is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="state">State</label>
+          <select id="state" name="state" [(ngModel)]="this.users.state" required #stateField="ngModel">
+            <option value="" disabled>Select State</option>
+            <!-- Add state options here -->
+          </select>
+          <div *ngIf="stateField.invalid && stateField.touched" class="error">
+            State is required
+          </div>
+        </div>
+        <div class="input-group">
+          <label for="country">Country</label>
+          <select id="country" name="country" [(ngModel)]="this.users.country" required #countryField="ngModel">
+            <option value="" disabled>Select Country</option>
+            <!-- Add country options here -->
+          </select>
+          <div *ngIf="countryField.invalid && countryField.touched" class="error">
+            Country is required
+          </div>
+        </div>
+        <h3>Investor Type</h3>
+        <div class="input-group">
+          <label for="investor_type">Retail Investor</label>
+          <select id="investor_type" name="investor_type" [(ngModel)]="this.users.investor_type" required
+            #investorTypeField="ngModel">
+            <option value="" disabled>Select Investor Type</option>
+            <!-- Add investor type options here -->
+          </select>
+          <div *ngIf="investorTypeField.invalid && investorTypeField.touched" class="error">
+            Investor Type is required
+          </div>
+        </div>
+        <button type="submit" style="background-color: #2A245B;color: white;" class="btn"
+          [disabled]="!acceptTerms || !acceptPrivacyPolicy || loginForm.invalid">Save</button>
+      </form>
     </div>
   </section>
 </div>
