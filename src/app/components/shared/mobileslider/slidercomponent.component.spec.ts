@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SlidercomponentComponent } from './slidercomponent.component';
+import { MobileSlideComponent } from './slidercomponent.component';
 
-describe('SlidercomponentComponent', () => {
-  let component: SlidercomponentComponent;
-  let fixture: ComponentFixture<SlidercomponentComponent>;
+describe('MobileSlideComponent', () => {
+  let component: MobileSlideComponent;
+  let fixture: ComponentFixture<MobileSlideComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [SlidercomponentComponent]
+      declarations: [MobileSlideComponent]
     });
-    fixture = TestBed.createComponent(SlidercomponentComponent);
+    fixture = TestBed.createComponent(MobileSlideComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

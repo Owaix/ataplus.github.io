@@ -1,5 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
-import * as exp from 'constants';
+import { AfterViewInit, Component, ElementRef, Renderer2 } from '@angular/core';
 import { MenuService } from 'src/app/service/menu.service';
 
 @Component({
@@ -7,9 +6,20 @@ import { MenuService } from 'src/app/service/menu.service';
   templateUrl: './terms.component.html',
   styleUrls: ['./terms.component.scss']
 })
-export class TermsComponent {
+export class TermsComponent implements AfterViewInit {
   selectedTab: string = 'terms';
-  constructor(private menuService: MenuService, private elRef: ElementRef) { }
+  constructor(
+    private renderer: Renderer2,
+    private menuService: MenuService,
+    private elRef: ElementRef
+  ) { }
+
+  ngAfterViewInit(): void {
+    const elements = this.elRef.nativeElement.querySelectorAll('.mat-ripple.mat-mdc-tab-header-pagination');
+    elements.forEach((element: HTMLElement) => {
+      this.renderer.setStyle(element, 'display', 'none');
+    });
+  }
 
   ngOnInit() {
     const container: HTMLElement = this.elRef.nativeElement.querySelector(

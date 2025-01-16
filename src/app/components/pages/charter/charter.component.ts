@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { Tabs } from '../terms/terms.component';
 import { MenuService } from 'src/app/service/menu.service';
 
@@ -10,8 +10,19 @@ import { MenuService } from 'src/app/service/menu.service';
 
 export class CharterComponent {
   selectedTab: string = 'terms';
+  isntSwip: boolean = true;
+  constructor(
+    private renderer: Renderer2,
+    private menuService: MenuService,
+    private elRef: ElementRef
+  ) { }
 
-  constructor(private menuService: MenuService, private elRef: ElementRef) { }
+  ngAfterViewInit(): void {
+    const elements = this.elRef.nativeElement.querySelectorAll('.mat-ripple.mat-mdc-tab-header-pagination');
+    elements.forEach((element: HTMLElement) => {
+      this.renderer.setStyle(element, 'display', 'none');
+    });
+  }
 
   ngOnInit() {
     const container: HTMLElement = this.elRef.nativeElement.querySelector(
@@ -74,15 +85,19 @@ export class CharterComponent {
   SWIPE_ACTION = { LEFT: 'swipeleft', RIGHT: 'swiperight' };
 
   selectChange(): void {
+    console.log("Selected INDEX: " + this.selectedIndex);
+    // if (!this.isntSwip) {
     let tabe = this.tabs[this.selectedIndex].value;
     document.getElementById(tabe)!.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    //}
+    this.isntSwip = false;
   }
 
   swipe(selectedIndex: number, action = this.SWIPE_ACTION.RIGHT, tab: string) {
     console.log("swipe");
     console.log("number", selectedIndex);
     console.log("action", action);
-    // Out of range
+    this.isntSwip = true;
     if (this.selectedIndex < 0/* starter point as 1 */ || this.selectedIndex > this.tabsCount/* here it is */) return;
 
     if (action === this.SWIPE_ACTION.LEFT) {
